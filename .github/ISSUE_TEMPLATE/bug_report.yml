@@ -1,0 +1,91 @@
+name: Bug Report
+description: Report a bug or issue with the RGB Badge hardware or firmware
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the information below to help us diagnose and fix the issue.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which part of the project is affected?
+      options:
+        - Matrix PCB
+        - Controller/Power PCB
+        - Firmware
+        - Documentation
+        - Build Process
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: hardware-version
+    attributes:
+      label: Hardware Version
+      description: If applicable, what hardware revision are you using?
+      placeholder: "e.g., v1.0, prototype batch 2"
+
+  - type: input
+    id: kicad-version
+    attributes:
+      label: KiCad Version
+      description: If this is a PCB design issue, what version of KiCad are you using?
+      placeholder: "e.g., KiCad 7.0.10"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe the issue you're experiencing
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Open the schematic...
+        2. Click on component...
+        3. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: Describe what should have happened
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+      placeholder: Describe what actually happened
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / Photos
+      description: If applicable, add screenshots of schematics, layouts, or photos of hardware
+      placeholder: Drag and drop images here
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here
+      placeholder: Any other relevant information

@@ -278,7 +278,7 @@ This project is licensed under the GNU Affero General Public License v3.0 (AGPL-
 
 ## Contributors
 
-*[Add contributor information]*
+- [@caesarakalaeii](https://github.com/caesarakalaeii) - Project creator and maintainer
 
 ---
 

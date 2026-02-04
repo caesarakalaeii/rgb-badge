@@ -85,7 +85,7 @@ Documentation improvements are always welcome:
 **Setup steps:**
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/rgb-badge.git
+git clone https://github.com/caesarakalaeii/rgb-badge.git
 cd rgb-badge
 
 # Open KiCad project files
