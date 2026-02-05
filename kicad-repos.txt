@@ -1,0 +1,19 @@
+# KiCad Library Repositories
+# Clone these to maintain a consistent KiCad library setup across machines
+
+## Official KiCad Libraries
+https://gitlab.com/kicad/libraries/kicad-footprints
+https://gitlab.com/kicad/libraries/kicad-symbols.git
+
+## Third-Party Libraries
+git@github.com:CDFER/JLCPCB-Kicad-Library.git
+git@github.com:kitspace/kicad_footprints.git
+ssh://git@github.com/espressif/kicad-libraries
+ssh://git@github.com/sivakov512/kicad-library
+
+## Hardware Projects
+git@github.com:caesarakalaeii/rgb-badge.git
+
+# Clone command example:
+# cd ~/Hobby
+# git clone <url>
