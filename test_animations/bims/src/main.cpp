@@ -56,13 +56,13 @@ void loop()
     {
       // Hamis 👍
       if (currentFrame >= hamis_len) currentFrame = 0;
-      frameData = pgm_read_ptr(&hamis_frames[currentFrame]);
+      frameData = (const uint32_t*)pgm_read_ptr(&hamis_frames[currentFrame]);
     } 
     else
     {
       // Pride Flag
       if (currentFrame >= pride_flag_len) currentFrame = 0;
-      frameData = pgm_read_ptr(&pride_flag_frames[currentFrame]);
+      frameData = (const uint32_t*)pgm_read_ptr(&pride_flag_frames[currentFrame]);
     }
 
     if (frameData != nullptr)
