@@ -15,7 +15,7 @@ import sys
 import pcbnew
 
 LIB_ID = 'LED_SMD:LED_WS2812B-1010_PLCC4_1.0x1.0mm'
-POWER_PINS = {'VDD', 'GND'}
+POWER_NETS = {'VDD', 'VDD_S', 'GND'}
 
 
 def add_via(board, pos, net_info, diameter, drill):
@@ -40,7 +40,7 @@ def add_fanouts(path: str) -> None:
         if fp.GetFPIDAsString() != LIB_ID:
             continue
         for pad in fp.Pads():
-            if pad.GetPinFunction() not in POWER_PINS:
+            if pad.GetNet().GetNetname() not in POWER_NETS:
                 continue
             add_via(board, pad.GetPosition(), pad.GetNet(), diameter, drill)
             added += 1

@@ -43,16 +43,21 @@ def rectify(path: str) -> None:
 
     x_min, x_max = xs[0] - MARGIN_NM, xs[-1] + MARGIN_NM
     y_min, y_max = ys[0] - MARGIN_NM, ys[-1] + MARGIN_NM
-    caps_in_area = []
-    for fp in board.GetFootprints():
-        if CAP_LIB_SUBSTR not in fp.GetFPIDAsString():
-            continue
-        p = fp.GetPosition()
-        if x_min <= p.x <= x_max and y_min <= p.y <= y_max:
-            caps_in_area.append(fp)
+    all_caps = [fp for fp in board.GetFootprints() if CAP_LIB_SUBSTR in fp.GetFPIDAsString()]
+    caps_in_area = [fp for fp in all_caps
+                    if x_min <= fp.GetPosition().x <= x_max
+                    and y_min <= fp.GetPosition().y <= y_max]
 
-    if len(caps_in_area) != len(blocks):
-        print(f'{path}: WARNING — {len(caps_in_area)} caps in LED area vs {len(blocks)} blocks')
+    # If the in-area count doesn't match blocks but the total count does, the
+    # caps were imported but not yet rough-placed (typical after a fresh
+    # schematic->PCB sync). Fall back to using all 0603 caps in that case.
+    if len(caps_in_area) != len(blocks) and len(all_caps) == len(blocks):
+        print(f'{path}: only {len(caps_in_area)}/{len(blocks)} caps in LED area; '
+              f'falling back to all {len(all_caps)} 0603 caps')
+        caps_in_area = all_caps
+    elif len(caps_in_area) != len(blocks):
+        print(f'{path}: WARNING — {len(caps_in_area)} caps in LED area vs {len(blocks)} blocks '
+              f'(total 0603 caps on board: {len(all_caps)})')
     caps_in_area.sort(key=lambda fp: (fp.GetPosition().y, fp.GetPosition().x))
 
     moved = 0
