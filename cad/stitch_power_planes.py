@@ -77,12 +77,15 @@ def stitch(path, pitch_mm=DEFAULT_PITCH_MM, clearance_mm=DEFAULT_CLEARANCE_MM):
             bb.GetBottom() + clearance,
         ))
 
+    # Existing vias use the same Default netclass geometry as this script,
+    # so approximate their radius with via_radius rather than calling the
+    # KiCad 10 layer-aware GetWidth(layer) API on each via.
     tracks = []
     existing_vias = []
     for t in board.GetTracks():
         if t.GetClass() == 'PCB_VIA':
             p = t.GetPosition()
-            existing_vias.append((p.x, p.y, t.GetWidth() // 2))
+            existing_vias.append((p.x, p.y, via_radius))
         else:
             s, e = t.GetStart(), t.GetEnd()
             tracks.append((s.x, s.y, e.x, e.y, t.GetWidth() // 2))
