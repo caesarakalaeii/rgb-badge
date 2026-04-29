@@ -5,6 +5,558 @@
 	(uuid "5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4")
 	(paper "A4")
 	(lib_symbols
+		(symbol "2026-04-28_18-53-12:SI7145DP-T1-GE3"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 11.43 -0.635 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "SI7145DP-T1-GE3"
+				(at 11.43 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "SON8_SI7135DP-T1-GE3_VIS"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.vishay.com/doc?64814"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "SI7145DP-T1-GE3"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SON8_SI7135DP-T1-GE3_VIS SON8_SI7135DP-T1-GE3_VIS-M SON8_SI7135DP-T1-GE3_VIS-L"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SI7145DP-T1-GE3_0_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 4.445 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -5.08) (xy 4.445 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 10.16 2.54)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -0.635) (xy 6.985 -0.635)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -1.27) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -3.175) (xy 5.08 -1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -4.445) (xy 6.985 -4.445)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -5.08) (xy 5.08 -3.81)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -7.62) (xy 12.7 -7.62)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 -2.54) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 -3.175) (xy 6.985 -2.54) (xy 5.715 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 6.35 -2.54)
+					(radius 3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 0) (xy 8.255 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 -0.635) (xy 6.985 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 -0.635) (xy 6.985 -2.54)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 -4.445) (xy 6.985 -5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 6.985 -4.445)
+					(radius 0.0254)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 -5.08) (xy 8.255 -5.08)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.54) (xy 7.6454 0)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 7.62 0)
+					(radius 0.0254)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 7.62 -5.08)
+					(radius 0.0254)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -7.62) (xy 7.62 -5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.255 -1.905) (xy 8.255 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.255 -5.08) (xy 8.255 -3.175)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.89 -1.905) (xy 7.62 -1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.89 -3.175) (xy 7.62 -3.175) (xy 8.255 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 5.08 270)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 7.62 5.08 270)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 10.16 5.08 270)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 -10.16 90)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 7.62 -10.16 90)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 10.16 -10.16 90)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 -10.16 90)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "74xGxx:74AHCT1G125"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -187,630 +739,6 @@
 						(effects
 							(font
 								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "AO4407A:AO4407A"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at -8.89 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" "AO4407A"
-				(at -8.89 -6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "AO4407A:SOIC127P600X175-8N"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "MF" "Alpha &"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MAXIMUM_PACKAGE_HEIGHT" "1.75 mm"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Package" "SOIC-8 Alpha &amp; Omega Semiconductor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Price" "None"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Check_prices" "https://www.snapeda.com/parts/AO4407A/Alpha/view-part/?ref=eda"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "STANDARD" "IPC 7351B"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "PARTREV" "I"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "SnapEDA_Link" "https://www.snapeda.com/parts/AO4407A/Alpha/view-part/?ref=snap"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MP" "AO4407A"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Description_1" "P-Channel 30 V 12A (Ta) 3.1W (Ta) Surface Mount 8-SOIC"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Availability" "In Stock"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MANUFACTURER" "Alpha & Omega Semiconductor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(symbol "AO4407A_0_0"
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.54) (xy 0.762 3.175)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 1.905) (xy 0.762 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0) (xy 0.762 0.762)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0) (xy 2.54 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -0.762) (xy 0.762 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -2.54) (xy 0.762 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -2.54) (xy 3.81 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -3.175) (xy 0.762 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 0.762 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 3.81 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 2.54)
-					(radius 0.3592)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 1.524 0.762) (xy 1.524 -0.762) (xy 2.54 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 -2.54)
-					(radius 0.3592)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.048 0.762) (xy 3.302 0.508)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 0.508) (xy 3.81 0.508)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 0.508) (xy 3.81 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 0.508) (xy 4.318 0.508)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 0.508) (xy 4.318 -0.254) (xy 3.302 -0.254) (xy 3.81 0.508)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 -2.54) (xy 3.81 0.508)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.318 0.508) (xy 4.572 0.254)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name ""
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name ""
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -2.54 2.54 0)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(hide yes)
-					(name ""
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(hide yes)
-					(name ""
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(hide yes)
-					(name ""
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1187,6 +1115,220 @@
 				)
 			)
 			(symbol "CL21B105KAFNNNE_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Capacitor_Electrolytic:CSH0605-101M1CT"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "CSH0605-101M1CT"
+				(at 0 11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
+				(at 8.89 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Aluminum Polymer Capacitor, 100uF, 6.3x5.4mm, 16V, ±20%"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Capacitance" "100uF"
+				(at 1.27 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Manufacturer" "C&C"
+				(at 8.89 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Voltage" "16V"
+				(at 8.89 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Tolerance" "±20%"
+				(at 8.89 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "CSH0605-101M1CT_0_1"
+				(rectangle
+					(start -2.286 0.508)
+					(end 2.286 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.286) (xy -0.762 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.794) (xy -1.27 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 2.286 -0.508)
+					(end -2.286 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "CSH0605-101M1CT_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 2.794)
@@ -1651,6 +1793,767 @@
 						)
 					)
 					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic_MountingPin:Conn_01x10_MountingPin"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x10_MountingPin"
+				(at 1.27 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connectable mounting pin connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??-1MP*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x10_MountingPin_1_1"
+				(rectangle
+					(start -1.27 11.43)
+					(end 1.27 -13.97)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 10.287)
+					(end 0 10.033)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 7.747)
+					(end 0 7.493)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -10.033)
+					(end 0 -10.287)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -12.573)
+					(end 0 -12.827)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 -14.732) (xy 1.016 -14.732)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Mounting"
+					(at 0 -14.351 0)
+					(effects
+						(font
+							(size 0.381 0.381)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 10.16 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 7.62 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -7.62 0)
+					(length 3.81)
+					(name "Pin_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -10.16 0)
+					(length 3.81)
+					(name "Pin_9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -12.7 0)
+					(length 3.81)
+					(name "Pin_10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -17.78 90)
+					(length 3.048)
+					(name "MountPin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "JLCPCB-Diodes:TVS-Bi,SMBJ6.0CA"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 2.032 0.834 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SMBJ6.0CA"
+				(at 2.032 -1.2122 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 0.8 0.8)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "PCM_JLCPCB:D_SMB"
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2312271606_Liown-SMBJ6-0CA_C2925451.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "nan"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC" "C2925451"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Stock" "50305"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" "0.041USD"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Process" "SMT"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Minimum Qty" "5"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Attrition Qty" "4"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Class" "Preferred Component"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Category" "Circuit Protection,ESD Protection Devices"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "Liown"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Part" "SMBJ6.0CA"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Breakdown Voltage" "6.67V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Maximum Clamping Voltage" "10.3V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Reverse Stand-Off Voltage (Vrwm)" "6V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Reverse Leakage Current (Ir)" "800uA"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Peak Pulse Power Dissipation (Ppp)@10/1000us" "600W"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Peak Pulse Current (Ipp)@10/1000us" "58.3A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TVS-Bi,SMBJ6.0CA_0_1"
+				(polyline
+					(pts
+						(xy -1.905 -0.635) (xy -1.27 0) (xy 1.27 0) (xy 1.905 0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.54) (xy 0 0) (xy 1.27 2.54) (xy -1.27 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 0 0) (xy -1.27 -2.54) (xy 1.27 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TVS-Bi,SMBJ6.0CA_1_1"
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 3.81)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 3.81 270)
+					(length 3.81)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -9132,6 +10035,12 @@
 		(uuid "2afc9e9a-f8a3-4be2-ae7c-56a16cd72730")
 	)
 	(junction
+		(at -57.15 25.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2afdcb6d-ea13-427e-bca0-a6bba3721005")
+	)
+	(junction
 		(at 4959.35 215.9)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -11088,6 +11997,12 @@
 		(uuid "384d96df-62ff-4171-80c5-f200eaa8d3d0")
 	)
 	(junction
+		(at -95.25 44.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "384db8ac-28b6-4e6a-8aa0-b6fe6b56180c")
+	)
+	(junction
 		(at 5680.71 146.05)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -11254,6 +12169,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "394798be-94fb-49b7-990b-e8e07e0e9dd9")
+	)
+	(junction
+		(at -16.51 11.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3952f46a-5f86-41d9-a7ba-283ff83efcc2")
 	)
 	(junction
 		(at 4942.84 146.05)
@@ -12460,6 +13381,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4153e3eb-8d55-4bd9-8a83-a2ff62e4b687")
+	)
+	(junction
+		(at -36.83 10.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "41563c1e-a96e-4166-82f4-5a8272537740")
 	)
 	(junction
 		(at 3067.05 173.99)
@@ -14886,6 +15813,12 @@
 		(uuid "4ffa0004-3cf8-4261-a90a-bbdb25a81dee")
 	)
 	(junction
+		(at -31.75 25.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "50155230-3547-41e9-b749-2652677eefc0")
+	)
+	(junction
 		(at 1322.07 200.66)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -15330,10 +16263,22 @@
 		(uuid "5316cf79-973a-4391-8153-df2569d50fc1")
 	)
 	(junction
+		(at -95.25 54.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "532ef6bf-0f97-4add-b301-e01c93ac7899")
+	)
+	(junction
 		(at 402.59 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "533589e2-9a99-47bb-a4ee-fd7a1b066777")
+	)
+	(junction
+		(at -57.15 10.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5343fe6a-71de-4eab-b1a5-7cd04dd700ad")
 	)
 	(junction
 		(at 435.61 45.72)
@@ -20232,6 +21177,12 @@
 		(uuid "72ea2d1b-d137-4091-ac72-b501584829eb")
 	)
 	(junction
+		(at -93.98 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "72f53120-8805-436c-b46b-c23b6ca6476c")
+	)
+	(junction
 		(at 4714.24 146.05)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -20568,6 +21519,12 @@
 		(uuid "750bd780-c9d0-4cad-8adb-5b73bf423ce7")
 	)
 	(junction
+		(at -53.34 10.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "75125f1c-4a0f-4960-9b67-12ac022fa312")
+	)
+	(junction
 		(at 4607.56 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -20596,6 +21553,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "753fbae6-b796-44ca-8df0-9b370bfe03d9")
+	)
+	(junction
+		(at -3.81 11.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "754eb887-f0b6-4439-b171-8e1be3419da2")
 	)
 	(junction
 		(at 3573.78 88.9)
@@ -21708,6 +22671,12 @@
 		(uuid "7d2c3183-8f99-4c57-95c9-73b1c79a02cd")
 	)
 	(junction
+		(at -34.29 25.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7d3970cb-5e9f-42e5-8c0d-bc099f1e12ab")
+	)
+	(junction
 		(at 665.48 215.9)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -22132,6 +23101,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7fc9c1a1-ba59-4db1-b777-7bb3e89d9f5c")
+	)
+	(junction
+		(at -34.29 10.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7fe0d778-9ebf-48ae-9936-29152c7b13f9")
 	)
 	(junction
 		(at 3653.79 74.93)
@@ -23458,6 +24433,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "88acb78c-56a1-4e3f-afb7-2ed03137d058")
+	)
+	(junction
+		(at -95.25 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "88b1947b-1c7f-4da4-a003-94f10aa29853")
 	)
 	(junction
 		(at 1087.12 30.48)
@@ -27102,6 +28083,12 @@
 		(uuid "a200b3df-dc82-4142-8715-aa52d207d07d")
 	)
 	(junction
+		(at -16.51 2.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a218e7c8-8202-4fc6-b5c3-f13b65fe7019")
+	)
+	(junction
 		(at 5012.69 215.9)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -27808,12 +28795,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a7084b2a-95ae-457c-b42d-be646a4c84b6")
-	)
-	(junction
-		(at -80.01 39.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a70c7a5e-055c-477c-8db3-7b7cd7ecc30b")
 	)
 	(junction
 		(at 1817.37 59.69)
@@ -30390,12 +31371,6 @@
 		(uuid "b911dad8-8acf-4bf1-85db-f927a6f073b5")
 	)
 	(junction
-		(at -80.01 49.53)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b912ebc6-6765-4164-ac42-85d3867f2853")
-	)
-	(junction
 		(at 419.1 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -30622,12 +31597,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ba83ec3b-875c-4277-a849-84c3454d298a")
-	)
-	(junction
-		(at -80.01 36.83)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ba891c8d-890f-45a4-953b-fe2e2e6ac889")
 	)
 	(junction
 		(at 1866.9 241.3)
@@ -31554,12 +32523,6 @@
 		(uuid "c260ccd8-c97b-48ff-a853-4f814ab72124")
 	)
 	(junction
-		(at -53.34 10.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c279577c-c42a-410a-b63a-a2b38ab448ca")
-	)
-	(junction
 		(at 4235.45 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -31768,6 +32731,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c3acd72f-8291-485a-a40a-aab0e167d6ae")
+	)
+	(junction
+		(at -3.81 2.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c3b6ee69-a4f7-4116-8c25-813268cc2113")
 	)
 	(junction
 		(at 2804.16 241.3)
@@ -34056,12 +35025,6 @@
 		(uuid "d23a27f7-5720-4886-9b6c-103c62264c1d")
 	)
 	(junction
-		(at -80.01 46.99)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d2401f68-ff55-4cc1-a79f-71f403ea66eb")
-	)
-	(junction
 		(at 5507.99 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -34942,6 +35905,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d7e3d0cd-960f-4952-b53a-154b492f5194")
+	)
+	(junction
+		(at -93.98 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d7ff85ba-c5e2-42f5-9142-7a7e3158d00e")
 	)
 	(junction
 		(at 5524.5 45.72)
@@ -39268,6 +40237,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f4de932c-3449-4197-871a-b7d490003ad7")
+	)
+	(junction
+		(at -93.98 52.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f4e910b5-992f-4dbc-9725-ae3986030bf1")
 	)
 	(junction
 		(at 3332.48 226.06)
@@ -46129,7 +47104,7 @@
 	)
 	(wire
 		(pts
-			(xy -53.34 10.16) (xy -40.64 10.16)
+			(xy -53.34 10.16) (xy -36.83 10.16)
 		)
 		(stroke
 			(width 0)
@@ -48109,6 +49084,16 @@
 	)
 	(wire
 		(pts
+			(xy -16.51 11.43) (xy -3.81 11.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f6af43a-53da-4872-9fbf-74e23d4d86cd")
+	)
+	(wire
+		(pts
 			(xy 4394.2 132.08) (xy 4410.71 132.08)
 		)
 		(stroke
@@ -48306,6 +49291,16 @@
 			(type default)
 		)
 		(uuid "0fcd9b6a-43ee-4c89-b13b-5ef20f6304eb")
+	)
+	(wire
+		(pts
+			(xy -36.83 25.4) (xy -34.29 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0fd53e8d-55a5-4ff2-9455-8b17f243bc6e")
 	)
 	(wire
 		(pts
@@ -49116,6 +50111,16 @@
 			(type default)
 		)
 		(uuid "11d47f30-3ed0-40bc-a1d4-d2c19311c1c6")
+	)
+	(wire
+		(pts
+			(xy 50.8 104.14) (xy 50.8 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11d80e53-ed02-4fe9-b82a-fcba3f958595")
 	)
 	(wire
 		(pts
@@ -50849,6 +51854,16 @@
 	)
 	(wire
 		(pts
+			(xy -31.75 25.4) (xy -29.21 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15a84cc9-317b-4dec-bf72-0cb7a8b6d2a8")
+	)
+	(wire
+		(pts
 			(xy 5454.65 132.08) (xy 5471.16 132.08)
 		)
 		(stroke
@@ -51269,16 +52284,6 @@
 	)
 	(wire
 		(pts
-			(xy -40.64 10.16) (xy -40.64 12.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "16998168-fa2d-4b3b-bee1-0da9eeab7b3b")
-	)
-	(wire
-		(pts
 			(xy 3968.75 226.06) (xy 3985.26 226.06)
 		)
 		(stroke
@@ -51406,6 +52411,16 @@
 			(type default)
 		)
 		(uuid "16d8bef0-a54c-4d61-b811-751306f7b8b4")
+	)
+	(wire
+		(pts
+			(xy -96.52 44.45) (xy -95.25 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16dad229-d397-46d5-b6fb-bf79fb0ba129")
 	)
 	(wire
 		(pts
@@ -54529,6 +55544,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 215.9) (xy 50.8 217.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d9f2de9-9321-4070-b63e-f9776067c5e4")
+	)
+	(wire
+		(pts
 			(xy 3429 59.69) (xy 3444.24 59.69)
 		)
 		(stroke
@@ -54556,6 +55581,16 @@
 			(type default)
 		)
 		(uuid "1db3afbf-0eec-4d33-ad4b-38eee5968214")
+	)
+	(wire
+		(pts
+			(xy -16.51 2.54) (xy -16.51 3.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1db7c861-9c9e-45c2-9790-856eb6532f93")
 	)
 	(wire
 		(pts
@@ -56249,6 +57284,16 @@
 	)
 	(wire
 		(pts
+			(xy -3.81 11.43) (xy 8.89 11.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2194aca2-0cf7-49bc-b028-f01a5664ffac")
+	)
+	(wire
+		(pts
 			(xy 3289.3 30.48) (xy 3289.3 34.29)
 		)
 		(stroke
@@ -56726,6 +57771,16 @@
 			(type default)
 		)
 		(uuid "22ecf2d3-56ae-4b2b-b69b-b58a14569b29")
+	)
+	(wire
+		(pts
+			(xy 50.8 45.72) (xy 50.8 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "230289d3-0c84-4acf-908e-4dc3c89605b6")
 	)
 	(wire
 		(pts
@@ -57999,6 +59054,16 @@
 	)
 	(wire
 		(pts
+			(xy -16.51 2.54) (xy -3.81 2.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2621a14d-a617-49ba-9b9c-d6f4fcfcdd59")
+	)
+	(wire
+		(pts
 			(xy 2345.69 215.9) (xy 2362.2 215.9)
 		)
 		(stroke
@@ -58379,7 +59444,7 @@
 	)
 	(wire
 		(pts
-			(xy -57.15 10.16) (xy -57.15 13.97)
+			(xy -67.31 10.16) (xy -67.31 13.97)
 		)
 		(stroke
 			(width 0)
@@ -63559,6 +64624,16 @@
 	)
 	(wire
 		(pts
+			(xy -34.29 10.16) (xy -31.75 10.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3372be37-9e88-4999-9676-8f9fae1284de")
+	)
+	(wire
+		(pts
 			(xy 1097.28 100.33) (xy 1097.28 104.14)
 		)
 		(stroke
@@ -65579,16 +66654,6 @@
 	)
 	(wire
 		(pts
-			(xy -80.01 34.29) (xy -80.01 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "38334bdd-fdca-40a5-b415-672c7c99f9b2")
-	)
-	(wire
-		(pts
 			(xy 119.38 201.93) (xy 120.65 201.93)
 		)
 		(stroke
@@ -67409,7 +68474,7 @@
 	)
 	(wire
 		(pts
-			(xy -57.15 21.59) (xy -57.15 25.4)
+			(xy -67.31 21.59) (xy -67.31 25.4)
 		)
 		(stroke
 			(width 0)
@@ -68619,6 +69684,16 @@
 	)
 	(wire
 		(pts
+			(xy 8.89 2.54) (xy -3.81 2.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3fa9d54a-72c4-4089-8196-525ba269c363")
+	)
+	(wire
+		(pts
 			(xy 2139.95 233.68) (xy 2141.22 233.68)
 		)
 		(stroke
@@ -68659,7 +69734,7 @@
 	)
 	(wire
 		(pts
-			(xy -57.15 10.16) (xy -53.34 10.16)
+			(xy -67.31 10.16) (xy -57.15 10.16)
 		)
 		(stroke
 			(width 0)
@@ -70289,6 +71364,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 86.36) (xy 50.8 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43761a74-cb8b-4f2e-95f4-396add35c4c0")
+	)
+	(wire
+		(pts
 			(xy 5481.32 212.09) (xy 5481.32 215.9)
 		)
 		(stroke
@@ -71246,6 +72331,16 @@
 			(type default)
 		)
 		(uuid "45821a4e-7842-4ee3-8d67-361230021a93")
+	)
+	(wire
+		(pts
+			(xy -96.52 62.23) (xy -93.98 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "458267a3-71ac-4903-bf3c-9a34ea5f9eca")
 	)
 	(wire
 		(pts
@@ -73106,6 +74201,16 @@
 			(type default)
 		)
 		(uuid "49db98ad-c751-4cb3-9218-64661b4290a1")
+	)
+	(wire
+		(pts
+			(xy -34.29 25.4) (xy -31.75 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49dc8446-cbdf-4aed-9e1d-fe5e9a6de743")
 	)
 	(wire
 		(pts
@@ -76609,6 +77714,16 @@
 	)
 	(wire
 		(pts
+			(xy -95.25 39.37) (xy -95.25 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "528ad6e5-4e8f-4bdf-bdcc-8797cb90fd8d")
+	)
+	(wire
+		(pts
 			(xy 2594.61 189.23) (xy 2611.12 189.23)
 		)
 		(stroke
@@ -79259,6 +80374,16 @@
 	)
 	(wire
 		(pts
+			(xy -45.72 15.24) (xy -41.91 15.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5858c529-b3fe-4719-aed4-8c57c9523fd9")
+	)
+	(wire
+		(pts
 			(xy 4149.09 241.3) (xy 4165.6 241.3)
 		)
 		(stroke
@@ -79506,6 +80631,16 @@
 			(type default)
 		)
 		(uuid "58efc43b-6cfe-4a83-a721-a8bde0b076d8")
+	)
+	(wire
+		(pts
+			(xy -96.52 59.69) (xy -95.25 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58f08429-a962-4166-8885-a7594606aa4a")
 	)
 	(wire
 		(pts
@@ -81239,6 +82374,16 @@
 	)
 	(wire
 		(pts
+			(xy 8.89 3.81) (xy 8.89 2.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d0868bb-eddd-42b1-bfef-7b08bd433b65")
+	)
+	(wire
+		(pts
 			(xy 5551.17 161.29) (xy 5561.33 161.29)
 		)
 		(stroke
@@ -82606,6 +83751,16 @@
 			(type default)
 		)
 		(uuid "6080927d-4fed-430e-8790-6a6b43d81923")
+	)
+	(wire
+		(pts
+			(xy 50.8 171.45) (xy 50.8 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6081e01a-ba6a-4cfc-a27c-264011e6383e")
 	)
 	(wire
 		(pts
@@ -84389,6 +85544,16 @@
 	)
 	(wire
 		(pts
+			(xy -96.52 49.53) (xy -95.25 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64fd7075-2689-4cca-86da-5eaa8aa17b25")
+	)
+	(wire
+		(pts
 			(xy 5561.33 88.9) (xy 5577.84 88.9)
 		)
 		(stroke
@@ -85226,6 +86391,16 @@
 			(type default)
 		)
 		(uuid "6723a5db-0fa2-4bd0-afb9-b8a618a07831")
+	)
+	(wire
+		(pts
+			(xy -95.25 44.45) (xy -95.25 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67272901-167b-4e1e-9fd1-95aec6394517")
 	)
 	(wire
 		(pts
@@ -86209,6 +87384,16 @@
 	)
 	(wire
 		(pts
+			(xy -57.15 21.59) (xy -57.15 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69b8dd26-cd20-4902-85ff-7dccdeba4647")
+	)
+	(wire
+		(pts
 			(xy 5690.87 157.48) (xy 5690.87 161.29)
 		)
 		(stroke
@@ -86929,7 +88114,7 @@
 	)
 	(wire
 		(pts
-			(xy -57.15 25.4) (xy -53.34 25.4)
+			(xy -67.31 25.4) (xy -57.15 25.4)
 		)
 		(stroke
 			(width 0)
@@ -87499,6 +88684,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 189.23) (xy 50.8 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6cbcdba4-4ac3-42e2-847e-85f8707fdcca")
+	)
+	(wire
+		(pts
 			(xy 382.27 30.48) (xy 402.59 30.48)
 		)
 		(stroke
@@ -88036,6 +89231,16 @@
 			(type default)
 		)
 		(uuid "6e0c2a38-9fd7-48ea-807d-37601c6c3e16")
+	)
+	(wire
+		(pts
+			(xy 50.8 199.39) (xy 50.8 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e0d2e68-0b90-49d3-b89e-e3728715d49f")
 	)
 	(wire
 		(pts
@@ -93636,16 +94841,6 @@
 			(type default)
 		)
 		(uuid "7bb23d3a-610a-4882-a15c-7454f328bd25")
-	)
-	(wire
-		(pts
-			(xy -80.01 44.45) (xy -80.01 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7bbb5edf-f3cb-464e-b570-d27d2895115f")
 	)
 	(wire
 		(pts
@@ -99599,16 +100794,6 @@
 	)
 	(wire
 		(pts
-			(xy -80.01 36.83) (xy -80.01 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "88c9af1f-6053-4c61-b52c-38805c5970ff")
-	)
-	(wire
-		(pts
 			(xy 5507.99 215.9) (xy 5524.5 215.9)
 		)
 		(stroke
@@ -100006,6 +101191,16 @@
 			(type default)
 		)
 		(uuid "89e550a4-0247-417b-8b02-94ace81b4634")
+	)
+	(wire
+		(pts
+			(xy 50.8 57.15) (xy 50.8 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89e68aed-8540-41cf-8e1e-07f81fb30705")
 	)
 	(wire
 		(pts
@@ -103269,6 +104464,16 @@
 	)
 	(wire
 		(pts
+			(xy -3.81 3.81) (xy -3.81 2.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "913b0eec-efeb-4ef5-900d-71695e41fb16")
+	)
+	(wire
+		(pts
 			(xy 50.8 90.17) (xy 50.8 88.9)
 		)
 		(stroke
@@ -103556,6 +104761,16 @@
 			(type default)
 		)
 		(uuid "920735d9-e914-4a35-8f00-de652cfe2082")
+	)
+	(wire
+		(pts
+			(xy -93.98 46.99) (xy -93.98 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92140aae-da02-4c74-9dbe-f589a8471d48")
 	)
 	(wire
 		(pts
@@ -104579,6 +105794,16 @@
 	)
 	(wire
 		(pts
+			(xy -93.98 52.07) (xy -93.98 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9461938d-fc26-4bf7-914f-2de36d74f9c3")
+	)
+	(wire
+		(pts
 			(xy 1637.03 59.69) (xy 1653.54 59.69)
 		)
 		(stroke
@@ -104796,6 +106021,16 @@
 			(type default)
 		)
 		(uuid "94b01b3b-5be2-45dc-b659-d1679e8d1a0a")
+	)
+	(wire
+		(pts
+			(xy -95.25 49.53) (xy -95.25 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94b78b0a-c196-40d4-83be-28aa77c6728e")
 	)
 	(wire
 		(pts
@@ -106059,6 +107294,16 @@
 	)
 	(wire
 		(pts
+			(xy -21.59 11.43) (xy -16.51 11.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "975b46aa-f96a-4d8e-a8a0-3c08dbfa8ce3")
+	)
+	(wire
+		(pts
 			(xy 144.78 208.28) (xy 146.05 208.28)
 		)
 		(stroke
@@ -106256,6 +107501,16 @@
 			(type default)
 		)
 		(uuid "97b56541-4c10-495b-a9b9-06a3edcb8ddd")
+	)
+	(wire
+		(pts
+			(xy -21.59 2.54) (xy -16.51 2.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97b5c489-184a-48eb-abe5-8dd9fd2a7c86")
 	)
 	(wire
 		(pts
@@ -107056,6 +108311,16 @@
 			(type default)
 		)
 		(uuid "99dceba5-49b0-4346-b149-153f654d23ed")
+	)
+	(wire
+		(pts
+			(xy -96.52 54.61) (xy -95.25 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99dd8865-d066-4f37-8a8a-4eaa524d2472")
 	)
 	(wire
 		(pts
@@ -109869,6 +111134,16 @@
 	)
 	(wire
 		(pts
+			(xy -36.83 10.16) (xy -34.29 10.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1199cb4-d4ef-4c80-b9e8-1a7d270c8d9c")
+	)
+	(wire
+		(pts
 			(xy 3299.46 215.9) (xy 3315.97 215.9)
 		)
 		(stroke
@@ -112029,6 +113304,16 @@
 	)
 	(wire
 		(pts
+			(xy -96.52 52.07) (xy -93.98 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a622f824-7054-40c4-ba7a-c8e52073c191")
+	)
+	(wire
+		(pts
 			(xy 3766.82 38.1) (xy 3768.09 38.1)
 		)
 		(stroke
@@ -113856,6 +115141,16 @@
 			(type default)
 		)
 		(uuid "aabdb241-6129-4557-b8d7-679bf326adc8")
+	)
+	(wire
+		(pts
+			(xy -93.98 41.91) (xy -93.98 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aac059fb-2ec6-4a0d-ad06-8db0feffa8bb")
 	)
 	(wire
 		(pts
@@ -117409,6 +118704,16 @@
 	)
 	(wire
 		(pts
+			(xy -96.52 46.99) (xy -93.98 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3668dfb-8dce-40a7-81c0-4040fdb02cbb")
+	)
+	(wire
+		(pts
 			(xy 5382.26 173.99) (xy 5398.77 173.99)
 		)
 		(stroke
@@ -118069,6 +119374,16 @@
 	)
 	(wire
 		(pts
+			(xy -95.25 59.69) (xy -95.25 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4d44686-5e80-4f0f-a80e-37126cd5cda3")
+	)
+	(wire
+		(pts
 			(xy 402.59 60.96) (xy 402.59 59.69)
 		)
 		(stroke
@@ -118226,16 +119541,6 @@
 			(type default)
 		)
 		(uuid "b52d577c-9a13-4b50-ae63-1e6137382316")
-	)
-	(wire
-		(pts
-			(xy -80.01 39.37) (xy -80.01 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5357085-9653-4656-9aa8-cf7727b70a07")
 	)
 	(wire
 		(pts
@@ -118526,6 +119831,16 @@
 			(type default)
 		)
 		(uuid "b5ebd4a3-5698-43b9-a6bc-218e15f015ec")
+	)
+	(wire
+		(pts
+			(xy -57.15 10.16) (xy -57.15 13.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5f02911-34fc-4d2a-815d-83264e336155")
 	)
 	(wire
 		(pts
@@ -118916,16 +120231,6 @@
 			(type default)
 		)
 		(uuid "b6dfbf24-1db7-4d92-b877-c5b02b434f14")
-	)
-	(wire
-		(pts
-			(xy -80.01 46.99) (xy -80.01 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b6e0f37a-78a1-4dbd-bd22-7988bdf505fb")
 	)
 	(wire
 		(pts
@@ -119379,6 +120684,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 161.29) (xy 50.8 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b80ea43d-f780-429f-9ef8-a5fc246711ce")
+	)
+	(wire
+		(pts
 			(xy 3785.87 185.42) (xy 3785.87 189.23)
 		)
 		(stroke
@@ -119796,6 +121111,16 @@
 			(type default)
 		)
 		(uuid "b9169c8b-5526-449e-a92e-3fd1979a3c61")
+	)
+	(wire
+		(pts
+			(xy -96.52 39.37) (xy -95.25 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b916e6c5-1b85-4c66-a3ec-b29b51d59403")
 	)
 	(wire
 		(pts
@@ -128129,6 +129454,16 @@
 	)
 	(wire
 		(pts
+			(xy -96.52 41.91) (xy -93.98 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd0ad3ec-fcec-4bc5-90f9-9b89e5dc7581")
+	)
+	(wire
+		(pts
 			(xy 1797.05 116.84) (xy 1817.37 116.84)
 		)
 		(stroke
@@ -128396,6 +129731,16 @@
 			(type default)
 		)
 		(uuid "cdd63c5a-1e29-4fea-9a7b-bdb1dbee8797")
+	)
+	(wire
+		(pts
+			(xy -57.15 25.4) (xy -53.34 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cde2b18e-efab-4659-9586-5485adfd10dc")
 	)
 	(wire
 		(pts
@@ -131079,6 +132424,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 143.51) (xy 50.8 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d47ca66c-7f02-4ce7-b041-726d5b0731d2")
+	)
+	(wire
+		(pts
 			(xy 1123.95 173.99) (xy 1140.46 173.99)
 		)
 		(stroke
@@ -131546,6 +132901,16 @@
 			(type default)
 		)
 		(uuid "d5a325a6-ab0e-43c4-9b60-9d54870f3edf")
+	)
+	(wire
+		(pts
+			(xy -96.52 57.15) (xy -93.98 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5a42ec9-c9be-4543-8dab-11ffd649e3a8")
 	)
 	(wire
 		(pts
@@ -133819,16 +135184,6 @@
 	)
 	(wire
 		(pts
-			(xy -80.01 49.53) (xy -80.01 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "da97b592-ae86-4eb5-bd5a-6944af6c6cff")
-	)
-	(wire
-		(pts
 			(xy 3369.31 241.3) (xy 3385.82 241.3)
 		)
 		(stroke
@@ -133866,6 +135221,16 @@
 			(type default)
 		)
 		(uuid "da9bb897-d6b6-4527-b66d-3640f8b02b62")
+	)
+	(wire
+		(pts
+			(xy 50.8 224.79) (xy 50.8 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "daaa2372-e930-4b11-aac1-1f3c4082bfd9")
 	)
 	(wire
 		(pts
@@ -140189,6 +141554,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 132.08) (xy 50.8 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e89521d4-57c6-425c-9147-d4b916ea4587")
+	)
+	(wire
+		(pts
 			(xy 5055.87 30.48) (xy 5055.87 34.29)
 		)
 		(stroke
@@ -140486,6 +141861,16 @@
 			(type default)
 		)
 		(uuid "e9683223-1598-4470-8027-8977663ec49b")
+	)
+	(wire
+		(pts
+			(xy -93.98 62.23) (xy -93.98 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e96ed998-8243-457d-ba9e-445cd2d1857d")
 	)
 	(wire
 		(pts
@@ -141236,6 +142621,16 @@
 			(type default)
 		)
 		(uuid "eb3176f8-6b63-421e-8979-b0b8a2f00a74")
+	)
+	(wire
+		(pts
+			(xy -57.15 10.16) (xy -53.34 10.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb3429e3-da41-4c60-8ca3-7f788311553c")
 	)
 	(wire
 		(pts
@@ -145449,6 +146844,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 74.93) (xy 50.8 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f542a145-d7f1-4113-8955-4996265d032e")
+	)
+	(wire
+		(pts
 			(xy 4721.86 153.67) (xy 4723.13 153.67)
 		)
 		(stroke
@@ -146546,6 +147951,16 @@
 			(type default)
 		)
 		(uuid "f7979694-e80e-4b8d-811e-3bb8d0effb16")
+	)
+	(wire
+		(pts
+			(xy 50.8 114.3) (xy 50.8 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7980692-6fb3-4bd0-a04d-13e5bdd1ba90")
 	)
 	(wire
 		(pts
@@ -150287,7 +151702,7 @@
 	)
 	(global_label "DATA2"
 		(shape input)
-		(at -80.01 25.4 0)
+		(at -96.52 25.4 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -150297,7 +151712,7 @@
 		)
 		(uuid "070448e8-8ba7-4052-a451-5a5cd5dc6703")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -71.4005 25.4 0)
+			(at -87.9105 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -150335,7 +151750,7 @@
 	)
 	(global_label "DATA7"
 		(shape input)
-		(at -80.01 12.7 0)
+		(at -96.52 12.7 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -150345,7 +151760,7 @@
 		)
 		(uuid "149a2b3c-25e1-43bd-8784-474c614a27e0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -71.4005 12.7 0)
+			(at -87.9105 12.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -150599,7 +152014,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at -57.15 25.4 180)
+		(at -67.31 25.4 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -150609,7 +152024,7 @@
 		)
 		(uuid "39e1ce69-332c-4ee6-97ce-8aae16feb7b0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -64.0057 25.4 0)
+			(at -74.1657 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -150671,7 +152086,7 @@
 	)
 	(global_label "VDD_S"
 		(shape input)
-		(at -40.64 22.86 270)
+		(at -36.83 25.4 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -150681,7 +152096,7 @@
 		)
 		(uuid "551be4c7-4153-4dac-85c0-0521757e3b1c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -40.64 31.6509 90)
+			(at -36.83 34.1909 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -150695,7 +152110,7 @@
 	)
 	(global_label "DATA5"
 		(shape input)
-		(at -80.01 17.78 0)
+		(at -96.52 17.78 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -150705,31 +152120,7 @@
 		)
 		(uuid "58a82ec3-af3d-401e-875d-64f492d75e70")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -71.4005 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "VDD"
-		(shape input)
-		(at -80.01 44.45 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5a855026-c218-44ce-bde7-a63cf43ef579")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -73.3962 44.45 0)
+			(at -87.9105 17.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -150863,7 +152254,7 @@
 	)
 	(global_label "DATA6"
 		(shape input)
-		(at -80.01 15.24 0)
+		(at -96.52 15.24 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -150873,7 +152264,7 @@
 		)
 		(uuid "6a5015b5-a031-4f30-a8c0-23953a02099e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -71.4005 15.24 0)
+			(at -87.9105 15.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -150882,6 +152273,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at -21.59 11.43 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7396fb21-ca7a-489e-9624-096af438abb7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at -28.4457 11.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -151007,7 +152422,7 @@
 	)
 	(global_label "DATA3"
 		(shape input)
-		(at -80.01 22.86 0)
+		(at -96.52 22.86 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -151017,7 +152432,7 @@
 		)
 		(uuid "881d0f32-b5e3-4f81-a1f9-4e8901b8bdce")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -71.4005 22.86 0)
+			(at -87.9105 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -151031,7 +152446,7 @@
 	)
 	(global_label "VDD"
 		(shape input)
-		(at -57.15 10.16 180)
+		(at -67.31 10.16 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -151041,7 +152456,7 @@
 		)
 		(uuid "8ac344ba-8a66-4c67-bca0-0d974e8cc4fe")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -63.7638 10.16 0)
+			(at -73.9238 10.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -151079,7 +152494,7 @@
 	)
 	(global_label "DATA1"
 		(shape input)
-		(at -80.01 27.94 0)
+		(at -96.52 27.94 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -151089,7 +152504,7 @@
 		)
 		(uuid "91fb0560-d9a3-48ac-a1b6-1ae1d47468fe")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -71.4005 27.94 0)
+			(at -87.9105 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -151127,7 +152542,7 @@
 	)
 	(global_label "DATA4"
 		(shape input)
-		(at -80.01 20.32 0)
+		(at -96.52 20.32 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -151137,7 +152552,7 @@
 		)
 		(uuid "9e8f8222-5de3-43e0-8513-d78b460de510")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -71.4005 20.32 0)
+			(at -87.9105 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -151269,30 +152684,6 @@
 			)
 		)
 	)
-	(global_label "GND"
-		(shape input)
-		(at -80.01 34.29 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "cb164dd3-a0da-4502-a3f7-b0131098fcad")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -73.1543 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "VDD_S"
 		(shape input)
 		(at 38.1 200.66 180)
@@ -151319,7 +152710,7 @@
 	)
 	(global_label "DATA8"
 		(shape input)
-		(at -80.01 10.16 0)
+		(at -96.52 10.16 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -151329,7 +152720,7 @@
 		)
 		(uuid "cc0f525d-a140-4303-b1a6-81c8852dae09")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -71.4005 10.16 0)
+			(at -87.9105 10.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -151365,6 +152756,30 @@
 			)
 		)
 	)
+	(global_label "VDD"
+		(shape input)
+		(at -95.25 39.37 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ce627400-50c7-4ffc-8fe1-508c48818a2d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at -88.6362 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "GND"
 		(shape input)
 		(at 38.1 132.08 180)
@@ -151386,6 +152801,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at -93.98 41.91 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d7461248-46be-483f-a0c5-14486eb93822")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at -87.1243 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -151498,6 +152937,30 @@
 		(uuid "e70cdce4-4875-49ec-8eb5-eaad40175ae4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 5.8443 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "VDD_S"
+		(shape input)
+		(at -21.59 2.54 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e8e0afeb-34e0-4b00-ac67-23f6cd94e39e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at -30.3809 2.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -177779,7 +179242,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x08_Socket")
-		(at -85.09 17.78 0)
+		(at -101.6 17.78 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -177790,7 +179253,7 @@
 		(dnp no)
 		(uuid "0e7640ad-9155-409a-b84e-2133e7d2b5b1")
 		(property "Reference" "J1"
-			(at -86.36 17.7799 0)
+			(at -102.87 17.7799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -177801,7 +179264,7 @@
 			)
 		)
 		(property "Value" "Conn_01x08_Socket"
-			(at -86.36 20.3199 0)
+			(at -102.87 20.3199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -177812,7 +179275,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Molex:Molex_CLIK-Mate_502443-0870_1x08-1MP_P2.00mm_Vertical"
-			(at -85.09 17.78 0)
+			(at -101.6 17.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -177823,7 +179286,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at -85.09 17.78 0)
+			(at -101.6 17.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -177834,7 +179297,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x08, script generated"
-			(at -85.09 17.78 0)
+			(at -101.6 17.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -199788,6 +201251,136 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D358")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor_Electrolytic:CSH0605-101M1CT")
+		(at 50.8 82.55 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1a5dc91e-05a3-4a42-8572-d17ceaf3325d")
+		(property "Reference" "C651"
+			(at 54.61 82.1689 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CSH0605-101M1CT"
+			(at 50.8 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
+			(at 41.91 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Aluminum Polymer Capacitor, 100uF, 6.3x5.4mm, 16V, ±20%"
+			(at 50.8 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "100uF"
+			(at 54.61 84.7089 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Manufacturer" "C&C"
+			(at 41.91 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 41.91 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±20%"
+			(at 41.91 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "3294435d-67d6-44d8-83b3-48789447bff4")
+		)
+		(pin "1"
+			(uuid "4ddacc2b-84c1-43f1-b67b-42f516291c21")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C651")
 					(unit 1)
 				)
 			)
@@ -221851,6 +223444,136 @@
 		)
 	)
 	(symbol
+		(lib_id "Capacitor_Electrolytic:CSH0605-101M1CT")
+		(at 50.8 220.98 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "27a58c86-a94f-4461-9cb0-4a5ddf630c91")
+		(property "Reference" "C656"
+			(at 54.61 220.5989 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CSH0605-101M1CT"
+			(at 50.8 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
+			(at 41.91 223.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Aluminum Polymer Capacitor, 100uF, 6.3x5.4mm, 16V, ±20%"
+			(at 50.8 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "100uF"
+			(at 54.61 223.1389 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Manufacturer" "C&C"
+			(at 41.91 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 41.91 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±20%"
+			(at 41.91 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "055e8c9e-e70b-449e-b485-d6275f582cee")
+		)
+		(pin "1"
+			(uuid "6e5cd15a-0543-4d0c-831f-bba8ae94d3f9")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C656")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LED:XL-1010RGBC-WS2812B")
 		(at 365.76 38.1 0)
 		(unit 1)
@@ -238779,6 +240502,115 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic_MountingPin:Conn_01x10_MountingPin")
+		(at -101.6 52.07 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "30336b22-893b-4f0a-a5da-2e6297a85076")
+		(property "Reference" "J3"
+			(at -102.87 49.1743 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x10_MountingPin"
+			(at -102.87 51.7143 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at -101.6 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at -101.6 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connectable mounting pin connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at -101.6 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "5"
+			(uuid "fdd6e57c-007d-4aa9-b000-19e6e87c9720")
+		)
+		(pin "8"
+			(uuid "e12ba726-1759-433c-b95b-2a7417a78429")
+		)
+		(pin "7"
+			(uuid "e317d62c-bc6d-4454-8e31-2706ef20469b")
+		)
+		(pin "3"
+			(uuid "4468af17-3412-4fae-a280-e2bcac516493")
+		)
+		(pin "4"
+			(uuid "1361ff46-654d-4b74-a6db-d69d4026c775")
+		)
+		(pin "MP"
+			(uuid "8fc9019c-f2e5-4fb3-9623-a9c64f651fe9")
+		)
+		(pin "9"
+			(uuid "7e3edcfb-58c5-4a2f-9a0a-5392e91bbeaf")
+		)
+		(pin "2"
+			(uuid "36ad6cda-17d4-49fa-8381-f9015b8a5cb0")
+		)
+		(pin "1"
+			(uuid "2cb15588-ee0e-4474-aec6-f2e00900ae37")
+		)
+		(pin "10"
+			(uuid "e2a04e11-18ee-466a-a367-a1311b02e708")
+		)
+		(pin "6"
+			(uuid "e8bfde59-ef56-4f05-90b9-2c3daa2e5683")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LED:XL-1010RGBC-WS2812B")
 		(at 5189.22 96.52 0)
 		(unit 1)
@@ -239325,6 +241157,136 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D657")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor_Electrolytic:CSH0605-101M1CT")
+		(at -3.81 7.62 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "30769a7f-2f89-456a-b2c5-7240ef11c9c9")
+		(property "Reference" "C658"
+			(at -7.62 8.0011 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CSH0605-101M1CT"
+			(at -3.81 -3.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
+			(at 5.08 5.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at -3.81 20.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Aluminum Polymer Capacitor, 100uF, 6.3x5.4mm, 16V, ±20%"
+			(at -3.81 7.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "100uF"
+			(at -7.62 5.4611 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Manufacturer" "C&C"
+			(at 5.08 2.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 5.08 7.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±20%"
+			(at 5.08 10.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "c246e068-e2ae-483e-a1a8-efded83927ed")
+		)
+		(pin "1"
+			(uuid "fecf0c4e-0d17-4c19-b7f1-615e8495843e")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C658")
 					(unit 1)
 				)
 			)
@@ -242662,6 +244624,136 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor_Electrolytic:CSH0605-101M1CT")
+		(at 50.8 195.58 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33096875-5444-46a0-8c52-402b5337e8aa")
+		(property "Reference" "C655"
+			(at 54.61 195.1989 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CSH0605-101M1CT"
+			(at 50.8 207.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
+			(at 41.91 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Aluminum Polymer Capacitor, 100uF, 6.3x5.4mm, 16V, ±20%"
+			(at 50.8 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "100uF"
+			(at 54.61 197.7389 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Manufacturer" "C&C"
+			(at 41.91 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 41.91 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±20%"
+			(at 41.91 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "225ee239-c2d3-4a1d-8efd-fd98f68b97d8")
+		)
+		(pin "1"
+			(uuid "7a481a16-2b23-4a25-9719-70382fa22c9f")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C655")
 					(unit 1)
 				)
 			)
@@ -247382,6 +249474,108 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D809")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "2026-04-28_18-53-12:SI7145DP-T1-GE3")
+		(at -41.91 15.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3589b947-4433-4d89-b080-4b44fb6d8106")
+		(property "Reference" "U1"
+			(at -26.67 16.5099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SI7145DP-T1-GE3"
+			(at -26.67 19.0499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "footprints:SON8_SI7135DP-T1-GE3_VIS-L"
+			(at -41.91 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/doc?64814"
+			(at -41.91 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at -41.91 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "e3c8d533-1b7c-430a-97ca-9f414ed73a66")
+		)
+		(pin "2"
+			(uuid "2c462db6-1cc9-48b6-86b4-0a3b9d9a174b")
+		)
+		(pin "6"
+			(uuid "d42d3ed3-b355-4a52-90ef-7746e6f1a1d2")
+		)
+		(pin "1"
+			(uuid "ef20248c-57b4-45c3-9368-4d160c43ce22")
+		)
+		(pin "5"
+			(uuid "5dfc3d03-e6ad-4d85-8b38-278ccbfa6de6")
+		)
+		(pin "3"
+			(uuid "69cefed7-cf5d-422b-8304-2a856c923ca9")
+		)
+		(pin "8"
+			(uuid "6e366f61-1d8f-4000-9192-bc98111b7c9b")
+		)
+		(pin "7"
+			(uuid "e12e85aa-8cc5-449f-a53b-8fc1b55bbf6e")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -294837,6 +297031,136 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D1707")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor_Electrolytic:CSH0605-101M1CT")
+		(at 50.8 139.7 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4f34e9e9-9ae8-4c00-bd53-657a7f5e8651")
+		(property "Reference" "C653"
+			(at 54.61 139.3189 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CSH0605-101M1CT"
+			(at 50.8 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
+			(at 41.91 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Aluminum Polymer Capacitor, 100uF, 6.3x5.4mm, 16V, ±20%"
+			(at 50.8 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "100uF"
+			(at 54.61 141.8589 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Manufacturer" "C&C"
+			(at 41.91 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 41.91 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±20%"
+			(at 41.91 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "bdecfa6c-24a2-48c9-88a3-e03ff907a671")
+		)
+		(pin "1"
+			(uuid "94a1f2a3-0c4f-4ffe-a819-3d46233c44f5")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C653")
 					(unit 1)
 				)
 			)
@@ -380437,6 +382761,264 @@
 		)
 	)
 	(symbol
+		(lib_id "JLCPCB-Diodes:TVS-Bi,SMBJ6.0CA")
+		(at -57.15 17.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "82c8335b-5fba-4af3-882c-dfc48429db5a")
+		(property "Reference" "D2561"
+			(at -52.07 16.5099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMBJ6.0CA"
+			(at -52.07 19.05 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_JLCPCB:D_SMB"
+			(at -58.928 17.78 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2312271606_Liown-SMBJ6-0CA_C2925451.pdf"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "nan"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2925451"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Stock" "50305"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.041USD"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Process" "SMT"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum Qty" "5"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Attrition Qty" "4"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Class" "Preferred Component"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Category" "Circuit Protection,ESD Protection Devices"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Liown"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part" "SMBJ6.0CA"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Breakdown Voltage" "6.67V"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Maximum Clamping Voltage" "10.3V"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Reverse Stand-Off Voltage (Vrwm)" "6V"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Reverse Leakage Current (Ir)" "800uA"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Peak Pulse Power Dissipation (Ppp)@10/1000us" "600W"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Peak Pulse Current (Ipp)@10/1000us" "58.3A"
+			(at -57.15 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a9249594-9c7a-4895-a4cb-cef8b6141a67")
+		)
+		(pin "2"
+			(uuid "e862d81f-f90b-4c2e-bfd8-b02f80e30f70")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "D2561")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LED:XL-1010RGBC-WS2812B")
 		(at 4128.77 96.52 0)
 		(unit 1)
@@ -408040,251 +410622,6 @@
 		)
 	)
 	(symbol
-		(lib_id "AO4407A:AO4407A")
-		(at -43.18 17.78 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "91c1fbf3-8d93-4ca1-9143-76c5faf8ceae")
-		(property "Reference" "Q2"
-			(at -36.83 16.5099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "AO4407A"
-			(at -36.83 19.0499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "AO4407A:SOIC127P600X175-8N"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Datasheet" ""
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" "Alpha &"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "1.75 mm"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Package" "SOIC-8 Alpha &amp; Omega Semiconductor"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Price" "None"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/AO4407A/Alpha/view-part/?ref=eda"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "STANDARD" "IPC 7351B"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "PARTREV" "I"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/AO4407A/Alpha/view-part/?ref=snap"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MP" "AO4407A"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Description_1" "P-Channel 30 V 12A (Ta) 3.1W (Ta) Surface Mount 8-SOIC"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MANUFACTURER" "Alpha & Omega Semiconductor"
-			(at -43.18 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(pin "6"
-			(uuid "18a65b78-101d-4320-88e0-4c9de81ecbdd")
-		)
-		(pin "7"
-			(uuid "43f95e91-a9eb-4f2c-a8b6-dfbf066007b4")
-		)
-		(pin "8"
-			(uuid "3fa3b56f-ec41-4a23-8f3e-3a7f064d2758")
-		)
-		(pin "4"
-			(uuid "0f733f8c-3c01-4235-9e8f-af25e695f6e1")
-		)
-		(pin "1"
-			(uuid "d56d2586-23fc-41bc-8114-fb572087c032")
-		)
-		(pin "5"
-			(uuid "87987a03-ee96-4f2d-8365-cceb2ce0e885")
-		)
-		(pin "3"
-			(uuid "d6e75653-89fd-4485-a57c-489294afe044")
-		)
-		(pin "2"
-			(uuid "0edc249b-7403-43bc-ae50-e3628218a3e2")
-		)
-		(instances
-			(project "led_bage"
-				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
-					(reference "Q2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Capacitor:CL21B105KAFNNNE")
 		(at 745.49 181.61 0)
 		(unit 1)
@@ -421887,6 +424224,136 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D1898")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor_Electrolytic:CSH0605-101M1CT")
+		(at -16.51 7.62 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "99e87883-300e-4bbc-b86a-fa7c6d2fd294")
+		(property "Reference" "C659"
+			(at -20.32 8.0011 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CSH0605-101M1CT"
+			(at -16.51 -3.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
+			(at -7.62 5.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at -16.51 20.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Aluminum Polymer Capacitor, 100uF, 6.3x5.4mm, 16V, ±20%"
+			(at -16.51 7.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "100uF"
+			(at -20.32 5.4611 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Manufacturer" "C&C"
+			(at -7.62 2.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at -7.62 7.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±20%"
+			(at -7.62 10.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "41591552-ebac-45e2-b172-8d208b24e6fd")
+		)
+		(pin "1"
+			(uuid "fb74e396-d1ab-4ea0-97da-75f58fcf2667")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C659")
 					(unit 1)
 				)
 			)
@@ -453772,6 +456239,136 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D1803")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor_Electrolytic:CSH0605-101M1CT")
+		(at 50.8 53.34 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ac429588-1520-4e29-aef7-1b8e6106d907")
+		(property "Reference" "C650"
+			(at 54.61 52.9589 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CSH0605-101M1CT"
+			(at 50.8 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
+			(at 41.91 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Aluminum Polymer Capacitor, 100uF, 6.3x5.4mm, 16V, ±20%"
+			(at 50.8 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "100uF"
+			(at 54.61 55.4989 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Manufacturer" "C&C"
+			(at 41.91 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 41.91 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±20%"
+			(at 41.91 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "6af109fe-b348-4917-8de1-579e658cf069")
+		)
+		(pin "1"
+			(uuid "44feeb68-46bf-4204-98c0-dce0c5100408")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C650")
 					(unit 1)
 				)
 			)
@@ -513423,7 +516020,7 @@
 	)
 	(symbol
 		(lib_id "Capacitor:CL21A106KAYNNNE")
-		(at -57.15 17.78 0)
+		(at -67.31 17.78 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -513434,7 +516031,7 @@
 		(fields_autoplaced yes)
 		(uuid "cd5a9e80-d549-4d49-b0f0-fb989d23a306")
 		(property "Reference" "C28"
-			(at -53.34 16.5099 0)
+			(at -63.5 16.5099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -513445,7 +516042,7 @@
 			)
 		)
 		(property "Value" "CL21A106KAYNNNE"
-			(at -57.15 6.35 0)
+			(at -67.31 6.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -513456,7 +516053,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at -48.26 15.24 0)
+			(at -58.42 15.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -513468,7 +516065,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
-			(at -57.15 30.48 0)
+			(at -67.31 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -513479,7 +516076,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 10uF, 0805, 25V, ±10%, X5R"
-			(at -57.15 17.78 0)
+			(at -67.31 17.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -513490,7 +516087,7 @@
 			)
 		)
 		(property "Capacitance" "10uF"
-			(at -53.34 19.0499 0)
+			(at -63.5 19.0499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -513501,7 +516098,7 @@
 			)
 		)
 		(property "Manufacturer" "Samsung"
-			(at -48.26 12.7 0)
+			(at -58.42 12.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -513513,7 +516110,7 @@
 			)
 		)
 		(property "Voltage" "25V"
-			(at -48.26 17.78 0)
+			(at -58.42 17.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -513525,7 +516122,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at -48.26 20.32 0)
+			(at -58.42 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -513537,7 +516134,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at -48.26 22.86 0)
+			(at -58.42 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -521046,6 +523643,136 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D832")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor_Electrolytic:CSH0605-101M1CT")
+		(at 8.89 7.62 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d1bf7650-baa6-4e2d-95a2-064736aa68d0")
+		(property "Reference" "C657"
+			(at 5.08 8.0011 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CSH0605-101M1CT"
+			(at 8.89 -3.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
+			(at 17.78 5.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 8.89 20.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Aluminum Polymer Capacitor, 100uF, 6.3x5.4mm, 16V, ±20%"
+			(at 8.89 7.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "100uF"
+			(at 5.08 5.4611 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Manufacturer" "C&C"
+			(at 17.78 2.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 17.78 7.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±20%"
+			(at 17.78 10.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "cd1e0c2e-ec2d-422e-9204-6c00b44e7685")
+		)
+		(pin "1"
+			(uuid "8ec68f4e-cf36-49e0-8228-bdd2dc1a61b8")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C657")
 					(unit 1)
 				)
 			)
@@ -556518,106 +559245,6 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D874")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x08_Socket")
-		(at -85.09 41.91 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e7d12d1d-b8a2-4b2c-b36e-78bf3b2d53fb")
-		(property "Reference" "J2"
-			(at -86.36 41.9099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_01x08_Socket"
-			(at -86.36 44.4499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_Molex:Molex_CLIK-Mate_502443-0870_1x08-1MP_P2.00mm_Vertical"
-			(at -85.09 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at -85.09 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x08, script generated"
-			(at -85.09 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "8"
-			(uuid "8457f14c-ca6d-4a09-b7d9-eefad15dd3a5")
-		)
-		(pin "7"
-			(uuid "2b619be2-311b-442b-83d6-9a0faef51adc")
-		)
-		(pin "6"
-			(uuid "dd377ccb-3854-41c6-a9a9-1093217c924f")
-		)
-		(pin "2"
-			(uuid "31e0aa30-34d2-48b3-b9a9-404baad1e3a1")
-		)
-		(pin "5"
-			(uuid "3cf25ad3-6933-4e0b-b95f-68e7521fa108")
-		)
-		(pin "4"
-			(uuid "000c6b9e-6fdc-4870-bd8e-ef4aacf29399")
-		)
-		(pin "1"
-			(uuid "702ceb4b-036c-4a7a-a2ae-9ac14661e602")
-		)
-		(pin "3"
-			(uuid "d26dc263-a661-42fa-8b40-df513fb37d6b")
-		)
-		(instances
-			(project "led_bage"
-				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
-					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -595645,6 +598272,266 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D765")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor_Electrolytic:CSH0605-101M1CT")
+		(at 50.8 167.64 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe050e19-5455-43ed-a01b-1cbdce353096")
+		(property "Reference" "C654"
+			(at 54.61 167.2589 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CSH0605-101M1CT"
+			(at 50.8 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
+			(at 41.91 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Aluminum Polymer Capacitor, 100uF, 6.3x5.4mm, 16V, ±20%"
+			(at 50.8 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "100uF"
+			(at 54.61 169.7989 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Manufacturer" "C&C"
+			(at 41.91 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 41.91 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±20%"
+			(at 41.91 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "697929ec-9dae-4786-8d9a-0f2cbd58f87c")
+		)
+		(pin "1"
+			(uuid "61e25ba6-eab4-455d-9187-0ab4ce6b739e")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C654")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor_Electrolytic:CSH0605-101M1CT")
+		(at 50.8 110.49 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe13a9a8-4c6a-47fb-9be6-eb0c94f2af4c")
+		(property "Reference" "C652"
+			(at 54.61 110.1089 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CSH0605-101M1CT"
+			(at 50.8 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
+			(at 41.91 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Aluminum Polymer Capacitor, 100uF, 6.3x5.4mm, 16V, ±20%"
+			(at 50.8 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "100uF"
+			(at 54.61 112.6489 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Manufacturer" "C&C"
+			(at 41.91 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 41.91 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±20%"
+			(at 41.91 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "fd9fce98-aa7e-45d9-8347-4207d9ed9b26")
+		)
+		(pin "1"
+			(uuid "5934b907-f267-454c-9a16-c922ecb12dc5")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C652")
 					(unit 1)
 				)
 			)
