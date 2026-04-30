@@ -3699,12 +3699,6 @@
 		(uuid "0085b375-f24f-4ae5-97fb-14e5c519f148")
 	)
 	(junction
-		(at 5680.71 241.3)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0086f263-a1f4-4cc8-993a-5ca947f48c86")
-	)
-	(junction
 		(at 5349.24 226.06)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3721,12 +3715,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "00960061-ebb4-467b-9362-8d5c0863ff7e")
-	)
-	(junction
-		(at 5680.71 173.99)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "00a2e5e0-a0c5-479c-9bed-d0566e94c45d")
 	)
 	(junction
 		(at 2399.03 59.69)
@@ -3859,12 +3847,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "01dd5017-6842-4f2d-8fc1-f7cf565b1c6d")
-	)
-	(junction
-		(at 5680.71 30.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "01de5e98-9bb2-433b-83a4-597cdb7da819")
 	)
 	(junction
 		(at 110.49 132.08)
@@ -4399,12 +4381,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "058de01b-dcfc-4711-bb6d-3051335725ea")
-	)
-	(junction
-		(at 5680.71 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "058fc291-117e-4fc1-9d17-e6361105baeb")
 	)
 	(junction
 		(at 5055.87 132.08)
@@ -7455,12 +7431,6 @@
 		(uuid "1aae5c4a-d8a4-4b49-9875-4b8cefffad52")
 	)
 	(junction
-		(at 5680.71 104.14)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1ab6a883-3d5d-4f56-8109-995dda98bf5e")
-	)
-	(junction
 		(at 4959.35 200.66)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7519,12 +7489,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1b07c613-655a-4d0a-8eef-60378a59b9c7")
-	)
-	(junction
-		(at 5680.71 59.69)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1b085b1e-cb6c-49fc-a55d-7b196695790d")
 	)
 	(junction
 		(at 2132.33 146.05)
@@ -9499,12 +9463,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2729cc6f-b683-4812-8859-1809d1ea8dfb")
-	)
-	(junction
-		(at 5680.71 45.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "272e7e33-ca84-4460-a331-ec9e485b4384")
 	)
 	(junction
 		(at 3460.75 173.99)
@@ -12001,12 +11959,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "384db8ac-28b6-4e6a-8aa0-b6fe6b56180c")
-	)
-	(junction
-		(at 5680.71 146.05)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "385c419c-bc7e-49e6-a1db-970255248ec1")
 	)
 	(junction
 		(at 957.58 104.14)
@@ -19491,12 +19443,6 @@
 		(uuid "6809e4c6-a0a9-4e40-9d86-9d601a869803")
 	)
 	(junction
-		(at 5680.71 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "680a0996-1ca5-41fd-8585-41d5a8a04396")
-	)
-	(junction
 		(at 1441.45 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -21127,12 +21073,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "72b39362-b4cb-4adc-835b-edf804c6604c")
-	)
-	(junction
-		(at 5680.71 116.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "72b9a305-2202-47d8-8b89-e25872fafefa")
 	)
 	(junction
 		(at 4447.54 45.72)
@@ -24355,12 +24295,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "88641d00-3463-4fda-bd66-04c14a1fcd69")
-	)
-	(junction
-		(at 5680.71 215.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "886479cc-9793-462c-9c39-f029bdf303b9")
 	)
 	(junction
 		(at 5541.01 59.69)
@@ -28179,12 +28113,6 @@
 		(uuid "a292d405-1903-4713-ba6c-777e5144abcd")
 	)
 	(junction
-		(at 5680.71 200.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a2a0b3f3-a444-41f4-a051-a7cb24fde46e")
-	)
-	(junction
 		(at 2159 189.23)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -30141,12 +30069,6 @@
 		(uuid "b04c23f6-d312-4992-be62-438f692c250c")
 	)
 	(junction
-		(at 5680.71 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b04e3436-5d05-4f72-944a-028040c8c1b1")
-	)
-	(junction
 		(at 3742.69 161.29)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -30331,12 +30253,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b1861878-6fd2-4413-a9e3-35b16da99a28")
-	)
-	(junction
-		(at 5680.71 132.08)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b18a56d3-e50c-457a-81cd-84c7ec6b2c41")
 	)
 	(junction
 		(at 1268.73 173.99)
@@ -32437,12 +32353,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c1920755-7baf-4725-a3ac-e88bfb0df29d")
-	)
-	(junction
-		(at 5680.71 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c1a8de11-f11a-4bd0-a411-75adfcd24e9f")
 	)
 	(junction
 		(at 4198.62 189.23)
@@ -41007,12 +40917,6 @@
 		(uuid "f9758f46-26eb-4771-9a44-a5492a97965b")
 	)
 	(junction
-		(at 5680.71 189.23)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f9851c04-9859-496a-823f-b790aa9e9a1c")
-	)
-	(junction
 		(at 3299.46 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -42094,16 +41998,6 @@
 	)
 	(wire
 		(pts
-			(xy 5680.71 189.23) (xy 5690.87 189.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "002cee65-bcb8-4cfa-a55f-97af0836db78")
-	)
-	(wire
-		(pts
 			(xy 3460.75 189.23) (xy 3477.26 189.23)
 		)
 		(stroke
@@ -42921,16 +42815,6 @@
 			(type default)
 		)
 		(uuid "01af5455-d538-49bd-8ea1-1f43b0b75822")
-	)
-	(wire
-		(pts
-			(xy 5680.71 74.93) (xy 5690.87 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "01ba658e-8ba2-4dbd-ab7c-3cc93a3dfec9")
 	)
 	(wire
 		(pts
@@ -46431,16 +46315,6 @@
 			(type default)
 		)
 		(uuid "0978c6d2-1be9-4b66-9c55-aaaacd5c61d2")
-	)
-	(wire
-		(pts
-			(xy 5680.71 30.48) (xy 5690.87 30.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "097ab772-f540-42c1-93e1-84ec781ef4e0")
 	)
 	(wire
 		(pts
@@ -57384,16 +57258,6 @@
 	)
 	(wire
 		(pts
-			(xy 5680.71 45.72) (xy 5690.87 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "21de9737-5d43-4d3c-8b71-452f4d24fa43")
-	)
-	(wire
-		(pts
 			(xy 3385.82 161.29) (xy 3402.33 161.29)
 		)
 		(stroke
@@ -57671,16 +57535,6 @@
 			(type default)
 		)
 		(uuid "22ba217e-6981-4ea9-b0f6-c0f5ec738850")
-	)
-	(wire
-		(pts
-			(xy 5680.71 241.3) (xy 5690.87 241.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "22bcd9f2-50a8-4331-86ed-c212b67298f0")
 	)
 	(wire
 		(pts
@@ -66824,16 +66678,6 @@
 	)
 	(wire
 		(pts
-			(xy 5690.87 59.69) (xy 5690.87 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "38d57193-20b6-4906-b9ec-113665c30e69")
-	)
-	(wire
-		(pts
 			(xy 2512.06 146.05) (xy 2512.06 149.86)
 		)
 		(stroke
@@ -68111,16 +67955,6 @@
 			(type default)
 		)
 		(uuid "3bff1f9b-ddc3-4460-8542-01339f8b5d2a")
-	)
-	(wire
-		(pts
-			(xy 5680.71 59.69) (xy 5690.87 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c02d6c1-f0cc-4051-aaf9-49bd82dc88ae")
 	)
 	(wire
 		(pts
@@ -72074,16 +71908,6 @@
 	)
 	(wire
 		(pts
-			(xy 5690.87 116.84) (xy 5690.87 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44fcd981-4189-45b7-b0d8-ddac12b7533d")
-	)
-	(wire
-		(pts
 			(xy 5278.12 31.75) (xy 5279.39 31.75)
 		)
 		(stroke
@@ -72421,16 +72245,6 @@
 			(type default)
 		)
 		(uuid "45ad9b8f-f70c-4fa2-9e8a-fb3692cb6104")
-	)
-	(wire
-		(pts
-			(xy 5690.87 30.48) (xy 5690.87 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "45b02bdc-554b-4f3f-9625-b01719f670ce")
 	)
 	(wire
 		(pts
@@ -74104,16 +73918,6 @@
 	)
 	(wire
 		(pts
-			(xy 5690.87 88.9) (xy 5690.87 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "49a29ac5-9d03-4d80-a332-0b7f0ef24c6e")
-	)
-	(wire
-		(pts
 			(xy 1167.13 185.42) (xy 1167.13 189.23)
 		)
 		(stroke
@@ -74971,16 +74775,6 @@
 			(type default)
 		)
 		(uuid "4b6c1fd2-7e5c-4d42-974c-dcc6f00ccb47")
-	)
-	(wire
-		(pts
-			(xy 5680.71 104.14) (xy 5690.87 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4b7a8cbe-4bf2-46bd-8b6c-6cf68574ef84")
 	)
 	(wire
 		(pts
@@ -76204,16 +75998,6 @@
 	)
 	(wire
 		(pts
-			(xy 5690.87 200.66) (xy 5690.87 204.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4ebc3567-dad0-47d1-86c3-7164c535c715")
-	)
-	(wire
-		(pts
 			(xy 4431.03 90.17) (xy 4431.03 88.9)
 		)
 		(stroke
@@ -76771,16 +76555,6 @@
 			(type default)
 		)
 		(uuid "4fe48eea-5e00-4dd4-92b5-48b13f482f05")
-	)
-	(wire
-		(pts
-			(xy 5690.87 71.12) (xy 5690.87 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4feea07b-7c01-4e4e-b024-b0a379fa0b79")
 	)
 	(wire
 		(pts
@@ -77411,16 +77185,6 @@
 			(type default)
 		)
 		(uuid "51a502d8-4410-4993-98fd-2e2ec3fcae2c")
-	)
-	(wire
-		(pts
-			(xy 5690.87 226.06) (xy 5690.87 229.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "51a891f8-184e-4c55-8b78-578ff99c9608")
 	)
 	(wire
 		(pts
@@ -85334,16 +85098,6 @@
 	)
 	(wire
 		(pts
-			(xy 5690.87 100.33) (xy 5690.87 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "64679ff3-b7d2-4e81-97b0-bf4153c2ee70")
-	)
-	(wire
-		(pts
 			(xy 426.72 153.67) (xy 427.99 153.67)
 		)
 		(stroke
@@ -87394,16 +87148,6 @@
 	)
 	(wire
 		(pts
-			(xy 5690.87 157.48) (xy 5690.87 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "69bc4037-8dad-4198-bae4-2e96969acc4f")
-	)
-	(wire
-		(pts
 			(xy 2705.1 67.31) (xy 2706.37 67.31)
 		)
 		(stroke
@@ -88501,16 +88245,6 @@
 			(type default)
 		)
 		(uuid "6c3fd368-aa83-4690-97b9-d6282a1c8c25")
-	)
-	(wire
-		(pts
-			(xy 5680.71 161.29) (xy 5690.87 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c4076f9-420d-4507-8579-630a1b118a98")
 	)
 	(wire
 		(pts
@@ -89731,16 +89465,6 @@
 			(type default)
 		)
 		(uuid "6f4c361b-1a69-4dab-a391-b6c6c19eb52a")
-	)
-	(wire
-		(pts
-			(xy 5690.87 41.91) (xy 5690.87 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f611d23-3447-4ea8-8618-c4b87a7b88d6")
 	)
 	(wire
 		(pts
@@ -91651,16 +91375,6 @@
 			(type default)
 		)
 		(uuid "73edd8fe-6232-4470-9ac5-e511c2d2b107")
-	)
-	(wire
-		(pts
-			(xy 5680.71 88.9) (xy 5690.87 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "73f5086d-1ce1-4885-b9d5-1a54b805e74d")
 	)
 	(wire
 		(pts
@@ -98034,16 +97748,6 @@
 	)
 	(wire
 		(pts
-			(xy 5680.71 146.05) (xy 5690.87 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "82f4a709-65eb-4648-9432-7ecf020cad83")
-	)
-	(wire
-		(pts
 			(xy 4574.54 132.08) (xy 4591.05 132.08)
 		)
 		(stroke
@@ -99421,16 +99125,6 @@
 			(type default)
 		)
 		(uuid "85d3113f-2fb8-4490-822d-7a6c6d0c7aa0")
-	)
-	(wire
-		(pts
-			(xy 5690.87 212.09) (xy 5690.87 215.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "85d8589e-f7d1-4b61-86f4-3d46a0188bff")
 	)
 	(wire
 		(pts
@@ -102984,16 +102678,6 @@
 	)
 	(wire
 		(pts
-			(xy 5690.87 146.05) (xy 5690.87 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8de8b10f-8738-42ab-a0df-2dc3bfc48776")
-	)
-	(wire
-		(pts
 			(xy 1008.38 153.67) (xy 1009.65 153.67)
 		)
 		(stroke
@@ -105411,16 +105095,6 @@
 			(type default)
 		)
 		(uuid "938248e5-8367-407d-ab8a-a00e2323b8b1")
-	)
-	(wire
-		(pts
-			(xy 5680.71 173.99) (xy 5690.87 173.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "938834a0-a709-40ed-bd37-0797744efb80")
 	)
 	(wire
 		(pts
@@ -108714,16 +108388,6 @@
 	)
 	(wire
 		(pts
-			(xy 5680.71 200.66) (xy 5690.87 200.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9b0b94ba-17e5-423f-a2cb-9d798a25d5b4")
-	)
-	(wire
-		(pts
 			(xy 2159 59.69) (xy 2159 63.5)
 		)
 		(stroke
@@ -110481,16 +110145,6 @@
 			(type default)
 		)
 		(uuid "9f3ee70a-c6ea-4066-bf22-64b77af7f44c")
-	)
-	(wire
-		(pts
-			(xy 5690.87 128.27) (xy 5690.87 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9f406bae-aa55-478f-ac51-c5cd9cf9efb4")
 	)
 	(wire
 		(pts
@@ -116934,16 +116588,6 @@
 	)
 	(wire
 		(pts
-			(xy 5680.71 116.84) (xy 5690.87 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "af8adae6-4376-48b8-a6be-93443df1e847")
-	)
-	(wire
-		(pts
 			(xy 1451.61 100.33) (xy 1451.61 104.14)
 		)
 		(stroke
@@ -117911,16 +117555,6 @@
 			(type default)
 		)
 		(uuid "b18afe21-d877-46a2-a474-59aa30cd49eb")
-	)
-	(wire
-		(pts
-			(xy 5680.71 226.06) (xy 5690.87 226.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b18bfc58-39f9-42ca-a8db-04ea8d4d4c82")
 	)
 	(wire
 		(pts
@@ -123151,16 +122785,6 @@
 			(type default)
 		)
 		(uuid "be450959-b45f-4a12-83ad-f19aa84c2c16")
-	)
-	(wire
-		(pts
-			(xy 5690.87 185.42) (xy 5690.87 189.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "be488ab2-ea50-46d0-b3b6-573cb9792826")
 	)
 	(wire
 		(pts
@@ -128944,16 +128568,6 @@
 	)
 	(wire
 		(pts
-			(xy 5680.71 132.08) (xy 5690.87 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cbdbc1ae-0b21-49e4-a55a-e72a4c3bc1ca")
-	)
-	(wire
-		(pts
 			(xy 2837.18 30.48) (xy 2853.69 30.48)
 		)
 		(stroke
@@ -133634,16 +133248,6 @@
 	)
 	(wire
 		(pts
-			(xy 5690.87 237.49) (xy 5690.87 241.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d7570476-66e8-430b-a698-93561981a7ce")
-	)
-	(wire
-		(pts
 			(xy 3340.1 96.52) (xy 3341.37 96.52)
 		)
 		(stroke
@@ -136311,16 +135915,6 @@
 			(type default)
 		)
 		(uuid "dcf25fee-331c-4e1f-a64d-c315faf8f68a")
-	)
-	(wire
-		(pts
-			(xy 5690.87 173.99) (xy 5690.87 177.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dcfb8f43-006d-4195-b57a-e1081c92a25d")
 	)
 	(wire
 		(pts
@@ -142141,16 +141735,6 @@
 			(type default)
 		)
 		(uuid "ea06104a-74d0-474c-b819-a6b0bf88727b")
-	)
-	(wire
-		(pts
-			(xy 5680.71 215.9) (xy 5690.87 215.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea09519c-fd91-404f-9b94-e7c9e8b86c2a")
 	)
 	(wire
 		(pts
@@ -151442,16 +151026,6 @@
 		)
 		(uuid "1a865f76-7029-4ad6-986e-6ad3fb23bcaa")
 	)
-	(label "DATA5"
-		(at 38.1 153.67 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1b4b730d-fba4-4164-8489-927345fdbb0b")
-	)
 	(label "GND"
 		(at 38.1 241.3 0)
 		(effects
@@ -151461,16 +151035,6 @@
 			(justify left bottom)
 		)
 		(uuid "1f4a5579-bd85-4b12-b3a8-9055e33c7aad")
-	)
-	(label "DATA7"
-		(at 38.1 208.28 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2c7b6314-202f-4aa8-9119-b19c1f02152a")
 	)
 	(label "GND"
 		(at 38.1 74.93 0)
@@ -151492,46 +151056,6 @@
 		)
 		(uuid "42530aed-93b6-4386-ba24-e997a657bbf9")
 	)
-	(label "DIN1"
-		(at 38.1 38.1 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6b3f5c84-de04-4c78-9ead-353c26928811")
-	)
-	(label "DATA3"
-		(at 38.1 96.52 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8ec6df01-095b-4b50-b447-6fcbc394ac28")
-	)
-	(label "DATA6"
-		(at 38.1 181.61 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9a6b5ed7-0702-4842-bda3-92a7ac82f307")
-	)
-	(label "DATA2"
-		(at 38.1 67.31 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b8c7482a-a1d7-4725-a74c-50c4ac425318")
-	)
 	(label "GND"
 		(at 38.1 161.29 0)
 		(effects
@@ -151551,26 +151075,6 @@
 			(justify left bottom)
 		)
 		(uuid "d13fad2e-c250-430c-bf21-3388bd7db823")
-	)
-	(label "DATA4"
-		(at 38.1 124.46 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d7e97808-9e71-444e-8920-aad0df8b9913")
-	)
-	(label "DATA8"
-		(at 38.1 233.68 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e5628502-9646-4222-911c-5564305e851b")
 	)
 	(global_label "GND"
 		(shape input)
@@ -177483,7 +176987,150 @@
 				)
 			)
 		)
-	)(symbol
+	)
+	(symbol
+		(lib_id "Capacitor:CL21B105KAFNNNE")
+		(at 5269.23 233.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0dde6784-420a-45ad-a6a0-d942f55cc21f")
+		(property "Reference" "C643"
+			(at 5273.04 232.4099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CL21B105KAFNNNE"
+			(at 5269.23 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 5278.12 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
+			(at 5269.23 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
+			(at 5269.23 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "1uF"
+			(at 5273.04 234.9499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 5278.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 5278.12 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±10%"
+			(at 5278.12 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 5278.12 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "f5c0c747-b98c-4809-9543-3725e442ea86")
+		)
+		(pin "1"
+			(uuid "ece81dea-922b-4fbd-95cc-698a5d591642")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C643")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Capacitor:CL21B105KAFNNNE")
 		(at 2724.15 153.67 0)
 		(unit 1)
@@ -208389,148 +208036,6 @@
 	)
 	(symbol
 		(lib_id "Capacitor:CL21B105KAFNNNE")
-		(at 5690.87 153.67 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1f929a9d-f6dc-4ed6-a845-f6fe861ce0b6")
-		(property "Reference" "C409"
-			(at 5694.68 152.3999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CL21B105KAFNNNE"
-			(at 5690.87 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 5699.76 151.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
-			(at 5690.87 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
-			(at 5690.87 153.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Capacitance" "1uF"
-			(at 5694.68 154.9399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Manufacturer" "Samsung"
-			(at 5699.76 148.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Voltage" "25V"
-			(at 5699.76 153.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "±10%"
-			(at 5699.76 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Temperature Coefficient" "X7R"
-			(at 5699.76 158.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "2"
-			(uuid "b01147a3-420f-4f62-8d31-80cbab6cddfa")
-		)
-		(pin "1"
-			(uuid "e81007e5-fb9b-4096-b252-852f2fad97b5")
-		)
-		(instances
-			(project "led_bage"
-				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
-					(reference "C409")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Capacitor:CL21B105KAFNNNE")
 		(at 5551.17 96.52 0)
 		(unit 1)
 		(body_style 1)
@@ -230157,148 +229662,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Capacitor:CL21B105KAFNNNE")
-		(at 5690.87 38.1 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2a6d45aa-7442-4efc-a36f-051fbb168667")
-		(property "Reference" "C89"
-			(at 5694.68 36.8299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CL21B105KAFNNNE"
-			(at 5690.87 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 5699.76 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
-			(at 5690.87 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
-			(at 5690.87 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Capacitance" "1uF"
-			(at 5694.68 39.3699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Manufacturer" "Samsung"
-			(at 5699.76 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Voltage" "25V"
-			(at 5699.76 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "±10%"
-			(at 5699.76 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Temperature Coefficient" "X7R"
-			(at 5699.76 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "2"
-			(uuid "4343bdb8-9299-4634-94dd-7bccb39b6c88")
-		)
-		(pin "1"
-			(uuid "851ed5ec-4532-4d70-a729-c69bfd5de823")
-		)
-		(instances
-			(project "led_bage"
-				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
-					(reference "C89")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Resistor_HKR_0402:RCT02330RFLF")
 		(at 34.29 124.46 270)
 		(unit 1)
@@ -234311,7 +233674,8 @@
 				)
 			)
 		)
-	)(symbol
+	)
+	(symbol
 		(lib_id "LED:XL-1010RGBC-WS2812B")
 		(at 3563.62 181.61 0)
 		(unit 1)
@@ -240147,7 +239511,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "30336b22-893b-4f0a-a5da-2e6297a85076")
-		(property "Reference" "J3"
+		(property "Reference" "J2"
 			(at -102.87 49.1743 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -240169,7 +239533,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_JST:JST_VH_B10PS-VH_1x10_P3.96mm_Horizontal"
 			(at -101.6 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -240238,7 +239602,7 @@
 		(instances
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
-					(reference "J3")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -250460,7 +249824,150 @@
 				)
 			)
 		)
-	)(symbol
+	)
+	(symbol
+		(lib_id "Capacitor:CL21B105KAFNNNE")
+		(at 5199.38 233.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "36e11d5c-04d6-4f65-8989-008346d3254a")
+		(property "Reference" "C642"
+			(at 5203.19 232.4099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CL21B105KAFNNNE"
+			(at 5199.38 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 5208.27 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
+			(at 5199.38 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
+			(at 5199.38 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "1uF"
+			(at 5203.19 234.9499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 5208.27 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 5208.27 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±10%"
+			(at 5208.27 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 5208.27 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "b7022eb2-153c-4a97-8001-7e20cddecffc")
+		)
+		(pin "1"
+			(uuid "7c6af873-3550-45d3-9c5f-f6d72480aa10")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C642")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LED:XL-1010RGBC-WS2812B")
 		(at 5524.5 124.46 0)
 		(unit 1)
@@ -297350,7 +296857,150 @@
 				)
 			)
 		)
-	)(symbol
+	)
+	(symbol
+		(lib_id "Capacitor:CL21B105KAFNNNE")
+		(at 5621.02 233.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4f9b51ed-3eb4-4639-8d7a-42d2f2123f83")
+		(property "Reference" "C648"
+			(at 5624.83 232.4099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CL21B105KAFNNNE"
+			(at 5621.02 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 5629.91 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
+			(at 5621.02 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
+			(at 5621.02 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "1uF"
+			(at 5624.83 234.9499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 5629.91 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 5629.91 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±10%"
+			(at 5629.91 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 5629.91 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "620162d2-7a61-49bb-97a5-7d5274a87d30")
+		)
+		(pin "1"
+			(uuid "b0769aa4-658b-494e-a881-f581a9739e7e")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C648")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LED:XL-1010RGBC-WS2812B")
 		(at 1797.05 67.31 0)
 		(unit 1)
@@ -298595,148 +298245,6 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D1193")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Capacitor:CL21B105KAFNNNE")
-		(at 5690.87 124.46 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "502ff62c-6dd8-48bf-88ea-79468a289848")
-		(property "Reference" "C329"
-			(at 5694.68 123.1899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CL21B105KAFNNNE"
-			(at 5690.87 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 5699.76 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
-			(at 5690.87 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
-			(at 5690.87 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Capacitance" "1uF"
-			(at 5694.68 125.7299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Manufacturer" "Samsung"
-			(at 5699.76 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Voltage" "25V"
-			(at 5699.76 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "±10%"
-			(at 5699.76 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Temperature Coefficient" "X7R"
-			(at 5699.76 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "2"
-			(uuid "9ef34d1d-abff-4f16-89fc-6203c3c031cd")
-		)
-		(pin "1"
-			(uuid "3c5a41a2-695e-457a-b11e-2f6810c37f63")
-		)
-		(instances
-			(project "led_bage"
-				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
-					(reference "C329")
 					(unit 1)
 				)
 			)
@@ -301797,7 +301305,150 @@
 				)
 			)
 		)
-	)(symbol
+	)
+	(symbol
+		(lib_id "Capacitor:CL21B105KAFNNNE")
+		(at 5339.08 233.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "52ccd253-811b-4d27-b4c4-90bc5c0845eb")
+		(property "Reference" "C644"
+			(at 5342.89 232.4099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CL21B105KAFNNNE"
+			(at 5339.08 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 5347.97 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
+			(at 5339.08 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
+			(at 5339.08 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "1uF"
+			(at 5342.89 234.9499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 5347.97 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 5347.97 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±10%"
+			(at 5347.97 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 5347.97 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "369ef6f5-c01e-4f44-8625-e54258b9e7f7")
+		)
+		(pin "1"
+			(uuid "dc73735f-abf5-4744-9e4e-c6b4cbc8098c")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C644")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Capacitor:CL21B105KAFNNNE")
 		(at 5621.02 124.46 0)
 		(unit 1)
@@ -381977,7 +381628,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "82c8335b-5fba-4af3-882c-dfc48429db5a")
-		(property "Reference" "D2561"
+		(property "Reference" "TVS1"
 			(at -52.07 16.5099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -381999,7 +381650,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "PCM_JLCPCB:D_SMB"
+		(property "Footprint" "JLCPCB:D_SMB"
 			(at -58.928 17.78 90)
 			(hide yes)
 			(show_name no)
@@ -382217,7 +381868,7 @@
 		(instances
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
-					(reference "D2561")
+					(reference "TVS1")
 					(unit 1)
 				)
 			)
@@ -392354,148 +392005,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Capacitor:CL21B105KAFNNNE")
-		(at 5690.87 208.28 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "884977e4-8db3-4105-a9fd-2594ad0ca26b")
-		(property "Reference" "C569"
-			(at 5694.68 207.0099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CL21B105KAFNNNE"
-			(at 5690.87 196.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 5699.76 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
-			(at 5690.87 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
-			(at 5690.87 208.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Capacitance" "1uF"
-			(at 5694.68 209.5499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Manufacturer" "Samsung"
-			(at 5699.76 203.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Voltage" "25V"
-			(at 5699.76 208.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "±10%"
-			(at 5699.76 210.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Temperature Coefficient" "X7R"
-			(at 5699.76 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "2"
-			(uuid "bae24b97-ae54-43d3-828f-d8a090886580")
-		)
-		(pin "1"
-			(uuid "64112c80-50ef-41b0-8729-f1fd09054f60")
-		)
-		(instances
-			(project "led_bage"
-				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
-					(reference "C569")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "LED:XL-1010RGBC-WS2812B")
 		(at 1850.39 153.67 0)
 		(unit 1)
@@ -402053,148 +401562,6 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D2341")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Capacitor:CL21B105KAFNNNE")
-		(at 5690.87 96.52 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8d75acf4-b8cd-482e-97e2-b717b40af054")
-		(property "Reference" "C249"
-			(at 5694.68 95.2499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CL21B105KAFNNNE"
-			(at 5690.87 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 5699.76 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
-			(at 5690.87 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
-			(at 5690.87 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Capacitance" "1uF"
-			(at 5694.68 97.7899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Manufacturer" "Samsung"
-			(at 5699.76 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Voltage" "25V"
-			(at 5699.76 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "±10%"
-			(at 5699.76 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Temperature Coefficient" "X7R"
-			(at 5699.76 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "2"
-			(uuid "ee3ddf78-401d-42f7-ba2e-c575c738d2eb")
-		)
-		(pin "1"
-			(uuid "4c991e6d-9bc8-4814-8099-f0dd28d6ed88")
-		)
-		(instances
-			(project "led_bage"
-				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
-					(reference "C249")
 					(unit 1)
 				)
 			)
@@ -413989,148 +413356,6 @@
 			(project "led_bage"
 				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
 					(reference "D53")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Capacitor:CL21B105KAFNNNE")
-		(at 5690.87 181.61 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "949e76b8-9bd5-41b9-9cc9-a97b1de77567")
-		(property "Reference" "C489"
-			(at 5694.68 180.3399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CL21B105KAFNNNE"
-			(at 5690.87 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 5699.76 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
-			(at 5690.87 194.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
-			(at 5690.87 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Capacitance" "1uF"
-			(at 5694.68 182.8799 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Manufacturer" "Samsung"
-			(at 5699.76 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Voltage" "25V"
-			(at 5699.76 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "±10%"
-			(at 5699.76 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Temperature Coefficient" "X7R"
-			(at 5699.76 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "2"
-			(uuid "fc05deed-0413-4b6f-bf3c-a5349d6f7c9b")
-		)
-		(pin "1"
-			(uuid "e4bce617-08e6-472e-aa26-18392dc2c9a3")
-		)
-		(instances
-			(project "led_bage"
-				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
-					(reference "C489")
 					(unit 1)
 				)
 			)
@@ -488158,148 +487383,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Capacitor:CL21B105KAFNNNE")
-		(at 5690.87 67.31 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "bdf2a058-ce63-4115-b43a-0720b2df09d2")
-		(property "Reference" "C169"
-			(at 5694.68 66.0399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CL21B105KAFNNNE"
-			(at 5690.87 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 5699.76 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
-			(at 5690.87 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
-			(at 5690.87 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Capacitance" "1uF"
-			(at 5694.68 68.5799 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Manufacturer" "Samsung"
-			(at 5699.76 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Voltage" "25V"
-			(at 5699.76 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "±10%"
-			(at 5699.76 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Temperature Coefficient" "X7R"
-			(at 5699.76 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "2"
-			(uuid "da9e062f-f123-48c5-81b7-7eba713a35f3")
-		)
-		(pin "1"
-			(uuid "a70556aa-df51-4977-b898-7443d249ea00")
-		)
-		(instances
-			(project "led_bage"
-				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
-					(reference "C169")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "LED:XL-1010RGBC-WS2812B")
 		(at 2997.2 233.68 0)
 		(unit 1)
@@ -502742,7 +501825,150 @@
 				)
 			)
 		)
-	)(symbol
+	)
+	(symbol
+		(lib_id "Capacitor:CL21B105KAFNNNE")
+		(at 5481.32 233.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c5e638fa-3c06-4f27-8b06-48fb290582d2")
+		(property "Reference" "C646"
+			(at 5485.13 232.4099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CL21B105KAFNNNE"
+			(at 5481.32 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 5490.21 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
+			(at 5481.32 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
+			(at 5481.32 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "1uF"
+			(at 5485.13 234.9499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 5490.21 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 5490.21 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±10%"
+			(at 5490.21 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 5490.21 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "4d071048-e893-4bb5-8a08-77075f95cd2c")
+		)
+		(pin "1"
+			(uuid "4a835277-be6b-444c-aeba-519690253f9b")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C646")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Capacitor:CL21B105KAFNNNE")
 		(at 2228.85 96.52 0)
 		(unit 1)
@@ -505241,7 +504467,150 @@
 				)
 			)
 		)
-	)(symbol
+	)
+	(symbol
+		(lib_id "Capacitor:CL21B105KAFNNNE")
+		(at 5408.93 233.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c767b6cb-6f25-434d-babf-3d2e9a2f63d2")
+		(property "Reference" "C645"
+			(at 5412.74 232.4099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CL21B105KAFNNNE"
+			(at 5408.93 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 5417.82 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
+			(at 5408.93 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
+			(at 5408.93 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "1uF"
+			(at 5412.74 234.9499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 5417.82 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 5417.82 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±10%"
+			(at 5417.82 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 5417.82 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "efd74d44-1016-4a28-bb20-24646649ba64")
+		)
+		(pin "1"
+			(uuid "45bbd35f-a34e-4cb5-8710-c0e47b53b14c")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C645")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LED:XL-1010RGBC-WS2812B")
 		(at 1797.05 233.68 0)
 		(unit 1)
@@ -555810,7 +555179,150 @@
 				)
 			)
 		)
-	)(symbol
+	)
+	(symbol
+		(lib_id "Capacitor:CL21B105KAFNNNE")
+		(at 5551.17 233.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e6848280-8dff-459d-93ec-8c55e19a14c2")
+		(property "Reference" "C647"
+			(at 5554.98 232.4099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CL21B105KAFNNNE"
+			(at 5551.17 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 5560.06 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/585/MLCC-1837944.pdf"
+			(at 5551.17 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic Capacitor, 1uF, 0805, 25V, ±10%, X7R"
+			(at 5551.17 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "1uF"
+			(at 5554.98 234.9499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 5560.06 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 5560.06 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±10%"
+			(at 5560.06 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 5560.06 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "2634049c-13f9-4329-9696-3cdc96e6cb59")
+		)
+		(pin "1"
+			(uuid "53b58d79-96dd-4789-ba3f-0da4d83d4ba2")
+		)
+		(instances
+			(project "led_bage"
+				(path "/5a1fbdb6-9ff1-41f9-b772-0dbf6c3721a4"
+					(reference "C647")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LED:XL-1010RGBC-WS2812B")
 		(at 3742.69 124.46 0)
 		(unit 1)
