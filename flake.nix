@@ -20,7 +20,12 @@
   outputs =
     # `...` rather than a closed { self, nixpkgs }: adding a second input later
     # would otherwise fail with "called with unexpected argument 'self'".
-    { nixpkgs, ... }:
+    #
+    # `self` is load-bearing, not decoration: rootPreamble below falls back to
+    # this flake's own source snapshot whenever the caller is standing outside a
+    # checkout, which is what makes `nix run <flakeref>#lint` from CI report THIS
+    # repo's findings instead of whatever happens to sit in the caller's cwd.
+    { self, nixpkgs, ... }:
     let
       lib = nixpkgs.lib;
 
@@ -237,7 +242,107 @@
         # `rm -rf .platformio` instead of hunting through $HOME, and keeps two
         # checkouts from fighting over one cache. The var survives into pio's FHS
         # sandbox.
+        #
+        # If $REPO_ROOT is the read-only snapshot (caller outside any checkout)
+        # this points into /nix/store and pio would fail on it -- but every pio
+        # verb refuses that case first, in pioProject, with a message that says
+        # what to do. Unreachable, not merely unpleasant.
         export PLATFORMIO_CORE_DIR="$REPO_ROOT/.platformio"
+
+        # ruff puts its cache in whatever it decides the project root is, which
+        # for `ruff check /abs/path` is the CALLER's cwd -- the last file this
+        # flake still wrote outside the repo once the verbs were anchored
+        # (`nix run <flakeref>#lint` left a .ruff_cache/ behind in a decoy
+        # directory). Pin it to the work tree instead; it needs no .gitignore
+        # entry because ruff seeds the directory with its own `*` .gitignore.
+        #
+        # Under the read-only snapshot anchor there is nowhere to put it, and
+        # RUFF_CACHE_DIR there is fatal rather than degraded ("Failed to
+        # initialize cache ...: Read-only file system", exit 2), so opt out.
+        # RUFF_NO_CACHE takes a bool and rejects `1` outright -- hence `true`.
+        if [ -w "$REPO_ROOT" ]; then
+          export RUFF_CACHE_DIR="$REPO_ROOT/.ruff_cache"
+        else
+          export RUFF_NO_CACHE=true
+        fi
+      '';
+
+      # ======================================================================
+      # PER-REPO BLOCK 3c -- how a checkout of THIS repo is recognised
+      # ======================================================================
+      # The generic rootPreamble asks git for a candidate repo root, but git
+      # answers for whatever tree the CALLER is standing in, which under
+      # `nix run /path/to/rgb-badge#fmt` is somebody else's project. So the
+      # candidate is validated against these paths before it is trusted; if any
+      # is missing, the anchor falls back to this flake's own read-only source
+      # snapshot instead of to `pwd`.
+      #
+      # cad/ and test_animations/ are the two directories this repo hangs off
+      # (boards + pcbnew scripts, firmware + converter), they have existed since
+      # the first commit, and both are tracked -- so they are present in the
+      # snapshot too and one list covers both anchors. Deliberately NOT
+      # flake.nix: every repo in the fleet has one, so it identifies nothing.
+      rootMarkers = [
+        "cad"
+        "test_animations"
+      ];
+
+      # ======================================================================
+      # PER-REPO BLOCK 3d -- guards and listings shared by several verbs
+      # ======================================================================
+      # setup/build/run all act on the platformio.ini in the caller's directory,
+      # which is right (four firmware projects, no default) but was unbounded:
+      # run from an unrelated PlatformIO project, `nix run <flakeref>#build`
+      # happily compiled THAT project with this repo's toolchain and dumped a
+      # gigabyte of packages into its $PLATFORMIO_CORE_DIR. The case statement
+      # bounds "the caller's directory" to "a directory inside this checkout".
+      #
+      # `pwd -P` because $REPO_ROOT comes from `git rev-parse --show-toplevel`,
+      # which is already symlink-resolved -- comparing it against the logical
+      # $PWD would reject a perfectly good directory reached through a symlink.
+      # The trailing slash on both sides is what makes $REPO_ROOT itself match
+      # (`*` matches the empty string) without also matching a sibling checkout
+      # whose path merely starts with the same characters.
+      pioProject = ''
+        case "$(pwd -P)/" in
+          "$REPO_ROOT"/*) ;;
+          *)
+            echo "refusing to act on $PWD: it is outside this checkout ($REPO_ROOT)" >&2
+            echo "cd into test_animations/, test_animations/bad_apple/, test_animations/bims/ or test_animations/cat/ first" >&2
+            exit 1
+            ;;
+        esac
+        if [ ! -f platformio.ini ]; then
+          echo "no platformio.ini here -- cd into test_animations/, test_animations/bad_apple/, test_animations/bims/ or test_animations/cat/ first" >&2
+          exit 1
+        fi
+      '';
+
+      # lint and fmt need the same list of shell scripts, so it is defined once
+      # and pasted into both -- a second copy is how the two would drift.
+      #
+      # `git ls-files` in the normal case, because .platformio/ is gitignored and
+      # holds ~1 GB of vendored PlatformIO packages full of .sh that are not this
+      # repo's problem. `find` only for the snapshot anchor, which is not a git
+      # tree (`git ls-files` there walks out of /nix/store and fails) but holds
+      # tracked files exclusively, so the two lists agree by construction.
+      # -0/-print0 both ways so `xargs -0 -r` stays correct for either.
+      #
+      # The loop is not decoration either: `git -C "$REPO_ROOT" ls-files` prints
+      # paths relative to the ROOT, while xargs runs shellcheck in the CALLER's
+      # cwd, so `dev-lint` from cad/ used to report seven "does not exist" errors
+      # and check zero scripts -- a half-blind gate. Absolute paths are the only
+      # thing both halves agree on. `read -d ""` keeps that NUL-safe.
+      repoShellFiles = ''
+        repo_shell_files() {
+          if git -C "$REPO_ROOT" rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+            git -C "$REPO_ROOT" ls-files -z "*.sh" | while IFS= read -r -d "" path; do
+              printf '%s\0' "$REPO_ROOT/$path"
+            done
+          else
+            find "$REPO_ROOT" -name "*.sh" -print0
+          fi
+        }
       '';
 
       # ======================================================================
@@ -256,27 +361,30 @@
       # defines setup/build/flash/monitor for this repo -- `run` is its `flash`.
       #
       # `text` is bash under `set -euo pipefail`, shellcheck'd at BUILD time, and
-      # it runs in the caller's current directory. That last part matters more
-      # here than in most repos: there are FOUR platformio.ini projects, so the
-      # pio verbs act on whichever one you have cd'd into.
+      # every verb is ANCHORED: with no arguments it acts on $REPO_ROOT (see
+      # rootPreamble) and never on the caller's cwd. It did act on the cwd until
+      # a decoy directory proved what that means -- `nix run <flakeref>#lint`
+      # from an unrelated checkout printed "All checks passed!" for a repo with
+      # 122 ruff findings, and `nix run <flakeref>#fmt` REWROTE the stranger's
+      # .py and .sh files. Explicit arguments are still forwarded, so
+      # `dev-lint cad/` and `dev-test cad/led_bage.kicad_pcb` keep working.
+      #
+      # The three pio verbs are the one deliberate exception, and only within the
+      # repo: there are FOUR platformio.ini projects here and no sane default
+      # among them, so they act on whichever one you have cd'd into -- but
+      # pioProject below refuses a cwd outside $REPO_ROOT.
       commands = pkgs: {
         setup = {
-          description = "(network) install PlatformIO packages for the firmware project in the current directory";
+          description = "(network) install PlatformIO packages for the firmware project in the current directory (must be inside the repo)";
           text = ''
-            if [ ! -f platformio.ini ]; then
-              echo "no platformio.ini here -- cd into test_animations/, test_animations/bad_apple/, test_animations/bims/ or test_animations/cat/ first" >&2
-              exit 1
-            fi
+            ${pioProject}
             pio pkg install "$@"
           '';
         };
         build = {
-          description = "compile the ESP32 firmware in the current directory (first run needs network)";
+          description = "compile the ESP32 firmware in the current directory (must be inside the repo; first run needs network)";
           text = ''
-            if [ ! -f platformio.ini ]; then
-              echo "no platformio.ini here -- cd into a firmware project under test_animations/ first" >&2
-              exit 1
-            fi
+            ${pioProject}
             pio run "$@"
           '';
         };
@@ -290,19 +398,33 @@
           # A bare `python3` is correct here and resolves identically on both
           # surfaces, because this repo has no .venv for the wrappers' PATH
           # prepend to shadow.
+          #
+          # The chdir to $REPO_ROOT is the anchor: without it the board list came
+          # from the caller's cwd, so this verb reported "parsed 0 board(s)" --
+          # or worse, someone else's boards -- from anywhere but the repo. Note
+          # it happens ONLY in the no-argument path: explicit relative paths are
+          # the user's own, and must keep resolving against their cwd.
           description = "parse every tracked .kicad_pcb through pcbnew (args: specific boards)";
           text = ''
             python3 -c '
-            import os, subprocess, sys
+            import os, pathlib, subprocess, sys
             import pcbnew
 
             paths = sys.argv[1:]
             if not paths:
                 os.chdir(os.environ.get("REPO_ROOT", "."))
-                paths = subprocess.run(
+                listed = subprocess.run(
                     ["git", "ls-files", "*.kicad_pcb"],
-                    capture_output=True, text=True, check=True,
-                ).stdout.split()
+                    capture_output=True, text=True,
+                )
+                # No check=True: the read-only snapshot anchor is not a git tree,
+                # and since it holds tracked files only, globbing it yields the
+                # same set that git would have listed in a work tree.
+                paths = (
+                    listed.stdout.split()
+                    if listed.returncode == 0
+                    else sorted(str(p) for p in pathlib.Path().rglob("*.kicad_pcb"))
+                )
             if not paths:
                 sys.exit("no .kicad_pcb files found")
 
@@ -329,19 +451,39 @@
           # left visible on purpose. Do NOT silence it by adding a permissive
           # ruff config or a --severity floor -- fix the findings, or accept the
           # noise and diff it against a baseline.
-          description = "ruff check + shellcheck over tracked shell scripts (repo is not clean today)";
+          #
+          # `"''${@:-$REPO_ROOT}"` is the whole anchoring fix for ruff: with
+          # arguments it forwards them verbatim, with none it checks the repo
+          # instead of `.`. The bare `ruff check "$@"` it replaces is why this
+          # gate used to print "All checks passed!" from an empty directory --
+          # exit 0 after inspecting zero files, which is worse than no gate.
+          description = "ruff check + shellcheck over this repo, from any cwd (repo is not clean today)";
           text = ''
+            ${repoShellFiles}
             status=0
-            git -C "$REPO_ROOT" ls-files -z "*.sh" | xargs -0 -r shellcheck || status=1
-            ruff check "$@" || status=1
+            repo_shell_files | xargs -0 -r shellcheck || status=1
+            ruff check "''${@:-$REPO_ROOT}" || status=1
             exit "$status"
           '';
         };
         fmt = {
-          description = "shfmt -w on tracked shell scripts + ruff format (rewrites files)";
+          # The mutating half, so the anchor is not enough on its own: when the
+          # caller is outside any checkout, $REPO_ROOT is the /nix/store snapshot,
+          # and rewriting that is neither possible nor meaningful. Refuse loudly
+          # rather than let shfmt and ruff report a read-only filesystem, and
+          # NEVER fall back to the cwd -- `nix run <flakeref>#fmt` reformatting
+          # files in whatever directory an agent happened to be in is the single
+          # most destructive thing this flake could do.
+          description = "shfmt -w on tracked shell scripts + ruff format over this repo (rewrites files; needs a checkout)";
           text = ''
-            git -C "$REPO_ROOT" ls-files -z "*.sh" | xargs -0 -r shfmt -w
-            ruff format "$@"
+            ${repoShellFiles}
+            if [ ! -w "$REPO_ROOT" ]; then
+              echo "dev-fmt rewrites files, so it needs a writable checkout; $REPO_ROOT is read-only" >&2
+              echo "cd into a rgb-badge checkout and run it again" >&2
+              exit 1
+            fi
+            repo_shell_files | xargs -0 -r shfmt -w
+            ruff format "''${@:-$REPO_ROOT}"
           '';
         };
         run = {
@@ -349,12 +491,9 @@
           # calls it `run`. Needs the badge plugged in, the user in `dialout`,
           # and udev rules from pkgs.platformio-core.udev in the host NixOS
           # config -- none of which a project flake can provide.
-          description = "flash the firmware in the current directory to a connected ESP32 (needs USB)";
+          description = "flash the firmware in the current directory to a connected ESP32 (must be inside the repo; needs USB)";
           text = ''
-            if [ ! -f platformio.ini ]; then
-              echo "no platformio.ini here -- cd into a firmware project under test_animations/ first" >&2
-              exit 1
-            fi
+            ${pioProject}
             pio run --target upload "$@"
           '';
         };
@@ -374,14 +513,38 @@
           export LD_LIBRARY_PATH="${lib.makeLibraryPath (nativeLibs pkgs)}''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
         '';
 
-      # Every command gets $REPO_ROOT. `nix run` and `nix develop` both start in
-      # whatever directory they were invoked from, so a bare `.platformio`
-      # silently forks a second environment as soon as an agent works from a
-      # subdirectory -- and with four platformio.ini projects in this repo, that
-      # is the normal case rather than the exception. Note we do NOT cd there:
-      # commands act on the caller's cwd on purpose.
+      # Every command gets $REPO_ROOT, and every verb above is anchored to it.
+      # `nix run` and `nix develop` do NOT chdir, so the caller's cwd is an
+      # arbitrary directory that may have nothing to do with this project.
+      #
+      # This used to end in `|| pwd`, and that fallback was a live bug rather
+      # than a theoretical one. `git rev-parse --show-toplevel` answers for the
+      # tree the CALLER is standing in, and `pwd` is that directory verbatim, so
+      # `nix run /path/to/rgb-badge#lint` from elsewhere linted the caller's
+      # files (exit 0, "All checks passed!", zero files of this repo read) and
+      # `nix run /path/to/rgb-badge#fmt` REWROTE them. Both reproduced with a
+      # decoy directory before this was changed.
+      #
+      # Hence: validate, and never fall back to the cwd.
+      #   * git toplevel that carries every rootMarkers entry -> the work tree.
+      #     The only anchor a mutating verb accepts, and the one you get whenever
+      #     you are anywhere inside a checkout, including a subdirectory.
+      #   * anything else -> ${self}, this flake's own source snapshot. Read-only
+      #     and holding exactly the tracked files, so read-only verbs (`lint`,
+      #     `test`) give the same answer from any cwd on earth -- which is what
+      #     CI and a cold agent invoking `nix run <flakeref>#lint` need -- while
+      #     `dev-fmt` refuses on the -w check rather than writing anywhere.
+      #
+      # Not a cd: `dev-fmt cad/` and the pio verbs still need the caller's cwd.
+      # Anchoring is done per verb, at the point where the default is chosen.
       rootPreamble = ''
-        REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+        REPO_ROOT="$(git rev-parse --show-toplevel 2> /dev/null || true)"
+        for marker in ${lib.escapeShellArgs rootMarkers}; do
+          if [ ! -e "''${REPO_ROOT:-/nonexistent}/$marker" ]; then
+            REPO_ROOT="${self}"
+            break
+          fi
+        done
         export REPO_ROOT
       '';
 
