@@ -44,3 +44,11 @@ kicad-libs/
 
 .pio/
 */.pio/
+
+# Nix development shell
+.direnv/
+.platformio/
+__pycache__/
+*.pyc
+result
+result-*
