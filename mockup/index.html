@@ -1,0 +1,1200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>40 × 64 badge — resolution mockup</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #ddd;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  #info {
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    font-size: 12px;
+    color: #777;
+    text-align: right;
+    line-height: 1.5;
+  }
+  #stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  canvas {
+    background: #000;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    max-height: 82vh;
+    width: auto;
+    box-shadow: 0 0 60px rgba(255,255,255,0.04);
+    border: 1px solid #1a1a1a;
+  }
+  #controls {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 13px;
+  }
+  button {
+    background: #111;
+    color: #ddd;
+    border: 1px solid #333;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+  }
+  button:hover { background: #1a1a1a; border-color: #555; }
+  button:active { background: #222; }
+  #name {
+    min-width: 220px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+  #counter { color: #666; font-variant-numeric: tabular-nums; }
+  #hint { font-size: 11px; color: #666; }
+  #fps { color: #555; font-variant-numeric: tabular-nums; }
+  #ba-video { display: none; }
+</style>
+</head>
+<body>
+  <div id="info">
+    40 × 64 = 2560 LEDs<br>
+    <span id="fps">— fps</span>
+  </div>
+  <div id="stage">
+    <canvas id="led" width="480" height="768"></canvas>
+    <div id="controls">
+      <button id="prev">‹ Prev</button>
+      <div id="name">—</div>
+      <span id="counter">— / —</span>
+      <button id="next">Next ›</button>
+    </div>
+    <div id="hint">← → cycle · space pause</div>
+  </div>
+  <video id="ba-video" src="data/bad_apple.mp4" muted loop playsinline preload="auto"></video>
+
+<script>
+'use strict';
+
+const W = 40, H = 64;
+const SCALE = 12;
+const canvas = document.getElementById('led');
+const ctx = canvas.getContext('2d');
+canvas.width = W * SCALE;
+canvas.height = H * SCALE;
+
+const pixels = new Uint8ClampedArray(W * H * 3);
+
+function setPixel(x, y, r, g, b) {
+  if (x < 0 || x >= W || y < 0 || y >= H) return;
+  const i = (y * W + x) * 3;
+  pixels[i] = r; pixels[i + 1] = g; pixels[i + 2] = b;
+}
+
+function clearPixels() { pixels.fill(0); }
+
+function fadePixels(amount) {
+  for (let i = 0; i < pixels.length; i++) pixels[i] = Math.max(0, pixels[i] - amount);
+}
+
+// ─── Drawing primitives ──────────────────────────────────────────────────────
+
+function fillRect(x0, y0, w, h, c) {
+  for (let y = 0; y < h; y++)
+    for (let x = 0; x < w; x++)
+      setPixel(x0 + x, y0 + y, c[0], c[1], c[2]);
+}
+
+function fillCircle(cx, cy, r, c) {
+  const r2 = r * r;
+  for (let dy = -r; dy <= r; dy++)
+    for (let dx = -r; dx <= r; dx++)
+      if (dx * dx + dy * dy <= r2) setPixel(cx + dx, cy + dy, c[0], c[1], c[2]);
+}
+
+function fillEllipse(cx, cy, rx, ry, c) {
+  for (let dy = -ry; dy <= ry; dy++) {
+    for (let dx = -rx; dx <= rx; dx++) {
+      if ((dx * dx) / (rx * rx) + (dy * dy) / (ry * ry) <= 1) {
+        setPixel(cx + dx, cy + dy, c[0], c[1], c[2]);
+      }
+    }
+  }
+}
+
+function fillTriangle(x0, y0, x1, y1, x2, y2, c) {
+  const minX = Math.max(0, Math.floor(Math.min(x0, x1, x2)));
+  const maxX = Math.min(W - 1, Math.ceil(Math.max(x0, x1, x2)));
+  const minY = Math.max(0, Math.floor(Math.min(y0, y1, y2)));
+  const maxY = Math.min(H - 1, Math.ceil(Math.max(y0, y1, y2)));
+  const den = (y1 - y2) * (x0 - x2) + (x2 - x1) * (y0 - y2);
+  if (den === 0) return;
+  for (let y = minY; y <= maxY; y++) {
+    for (let x = minX; x <= maxX; x++) {
+      const a = ((y1 - y2) * (x - x2) + (x2 - x1) * (y - y2)) / den;
+      const b = ((y2 - y0) * (x - x2) + (x0 - x2) * (y - y2)) / den;
+      const cc = 1 - a - b;
+      if (a >= -0.001 && b >= -0.001 && cc >= -0.001) setPixel(x, y, c[0], c[1], c[2]);
+    }
+  }
+}
+
+function fillRoundedRect(x0, y0, w, h, r, c) {
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      let dx = 0, dy = 0;
+      if (x < r) dx = r - 1 - x;
+      else if (x >= w - r) dx = x - (w - r);
+      if (y < r) dy = r - 1 - y;
+      else if (y >= h - r) dy = y - (h - r);
+      if (dx === 0 || dy === 0 || dx * dx + dy * dy < r * r) {
+        setPixel(x0 + x, y0 + y, c[0], c[1], c[2]);
+      }
+    }
+  }
+}
+
+function drawLine(x0, y0, x1, y1, c) {
+  x0 |= 0; y0 |= 0; x1 |= 0; y1 |= 0;
+  const dx = Math.abs(x1 - x0);
+  const dy = -Math.abs(y1 - y0);
+  const sx = x0 < x1 ? 1 : -1;
+  const sy = y0 < y1 ? 1 : -1;
+  let err = dx + dy;
+  while (true) {
+    setPixel(x0, y0, c[0], c[1], c[2]);
+    if (x0 === x1 && y0 === y1) break;
+    const e2 = 2 * err;
+    if (e2 >= dy) { err += dy; x0 += sx; }
+    if (e2 <= dx) { err += dx; y0 += sy; }
+  }
+}
+
+// ─── Color helpers ───────────────────────────────────────────────────────────
+
+function hsvToRgb(h, s, v) {
+  h = ((h % 1) + 1) % 1;
+  const i = Math.floor(h * 6);
+  const f = h * 6 - i;
+  const p = v * (1 - s);
+  const q = v * (1 - f * s);
+  const t = v * (1 - (1 - f) * s);
+  let r, g, b;
+  switch (i % 6) {
+    case 0: r = v; g = t; b = p; break;
+    case 1: r = q; g = v; b = p; break;
+    case 2: r = p; g = v; b = t; break;
+    case 3: r = p; g = q; b = v; break;
+    case 4: r = t; g = p; b = v; break;
+    case 5: r = v; g = p; b = q; break;
+  }
+  return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}
+
+function chsv(h, s, v) { return hsvToRgb(h / 256, s / 255, v / 255); }
+function scale(c, s) { return [Math.round(c[0] * s), Math.round(c[1] * s), Math.round(c[2] * s)]; }
+function rint(min, max) { return Math.floor(Math.random() * (max - min)) + min; }
+
+// ─── Bitmap font (5×7) ───────────────────────────────────────────────────────
+
+const FONT = {
+  ' ': [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00],
+  'A': [0x0E, 0x11, 0x11, 0x1F, 0x11, 0x11, 0x11],
+  'B': [0x1E, 0x11, 0x11, 0x1E, 0x11, 0x11, 0x1E],
+  'C': [0x0F, 0x10, 0x10, 0x10, 0x10, 0x10, 0x0F],
+  'D': [0x1E, 0x11, 0x11, 0x11, 0x11, 0x11, 0x1E],
+  'E': [0x1F, 0x10, 0x10, 0x1E, 0x10, 0x10, 0x1F],
+  'F': [0x1F, 0x10, 0x10, 0x1E, 0x10, 0x10, 0x10],
+  'G': [0x0F, 0x10, 0x10, 0x17, 0x11, 0x11, 0x0E],
+  'H': [0x11, 0x11, 0x11, 0x1F, 0x11, 0x11, 0x11],
+  'I': [0x1F, 0x04, 0x04, 0x04, 0x04, 0x04, 0x1F],
+  'L': [0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x1F],
+  'M': [0x11, 0x1B, 0x15, 0x15, 0x11, 0x11, 0x11],
+  'N': [0x11, 0x19, 0x15, 0x13, 0x11, 0x11, 0x11],
+  'O': [0x0E, 0x11, 0x11, 0x11, 0x11, 0x11, 0x0E],
+  'P': [0x1E, 0x11, 0x11, 0x1E, 0x10, 0x10, 0x10],
+  'R': [0x1E, 0x11, 0x11, 0x1E, 0x14, 0x12, 0x11],
+  'S': [0x0F, 0x10, 0x10, 0x0E, 0x01, 0x01, 0x1E],
+  'T': [0x1F, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04],
+  'U': [0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x0E],
+  '0': [0x0E, 0x11, 0x13, 0x15, 0x19, 0x11, 0x0E],
+  '1': [0x04, 0x0C, 0x04, 0x04, 0x04, 0x04, 0x0E],
+  '2': [0x0E, 0x11, 0x01, 0x02, 0x04, 0x08, 0x1F],
+  '3': [0x1F, 0x02, 0x04, 0x02, 0x01, 0x11, 0x0E],
+  '4': [0x02, 0x06, 0x0A, 0x12, 0x1F, 0x02, 0x02],
+  '5': [0x1F, 0x10, 0x1E, 0x01, 0x01, 0x11, 0x0E],
+  '6': [0x06, 0x08, 0x10, 0x1E, 0x11, 0x11, 0x0E],
+  '7': [0x1F, 0x01, 0x02, 0x04, 0x08, 0x08, 0x08],
+  '8': [0x0E, 0x11, 0x11, 0x0E, 0x11, 0x11, 0x0E],
+  '9': [0x0E, 0x11, 0x11, 0x0F, 0x01, 0x02, 0x0C],
+  '×': [0x00, 0x11, 0x0A, 0x04, 0x0A, 0x11, 0x00],
+  '-': [0x00, 0x00, 0x00, 0x1F, 0x00, 0x00, 0x00],
+  '!': [0x04, 0x04, 0x04, 0x04, 0x04, 0x00, 0x04],
+  '.': [0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x04],
+};
+
+function drawGlyph(x, y, ch, c) {
+  const rows = FONT[ch] || FONT[' '];
+  for (let ry = 0; ry < 7; ry++) {
+    const bits = rows[ry];
+    for (let rx = 0; rx < 5; rx++) {
+      if (bits & (1 << (4 - rx))) setPixel(x + rx, y + ry, c[0], c[1], c[2]);
+    }
+  }
+}
+
+function drawCenteredString(s, y, c) {
+  const w = s.length * 6 - 1;
+  let cx = Math.floor((W - w) / 2);
+  for (const ch of s) { drawGlyph(cx, y, ch, c); cx += 6; }
+}
+
+// ─── Generic procedural animations ───────────────────────────────────────────
+
+let timeMs = 0;
+
+function rainbowScroll(dt) {
+  timeMs += dt;
+  const phase = timeMs * 0.00008;
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const h = (x + y) / (W + H) + phase;
+      const [r, g, b] = hsvToRgb(h, 1, 1);
+      setPixel(x, y, r, g, b);
+    }
+  }
+}
+
+function plasma(dt) {
+  timeMs += dt;
+  const t = timeMs * 0.001;
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const v =
+        Math.sin(x * 0.32 + t * 1.7) +
+        Math.sin(y * 0.21 + t * 1.3) +
+        Math.sin((x + y) * 0.18 + t * 0.9) +
+        Math.sin(Math.sqrt((x - 20) ** 2 + (y - 32) ** 2) * 0.22 + t * 1.1);
+      const h = (v + 4) / 8 + t * 0.05;
+      const [r, g, b] = hsvToRgb(h, 1, 1);
+      setPixel(x, y, r, g, b);
+    }
+  }
+}
+
+let sparkleAccum = 0;
+function sparkle(dt) {
+  fadePixels(Math.max(1, Math.round(dt * 0.4)));
+  sparkleAccum += dt;
+  while (sparkleAccum > 12) {
+    sparkleAccum -= 12;
+    const x = Math.floor(Math.random() * W);
+    const y = Math.floor(Math.random() * H);
+    const [r, g, b] = hsvToRgb(Math.random(), 0.6 + Math.random() * 0.4, 1);
+    setPixel(x, y, r, g, b);
+  }
+}
+
+const SCROLL_TEXT = 'RGB BADGE  40 × 64  2560 LEDS  ';
+let scrollX = W;
+function textScroll(dt) {
+  clearPixels();
+  scrollX -= dt * 0.012;
+  const charPitch = 6;
+  const totalWidth = SCROLL_TEXT.length * charPitch;
+  if (scrollX < -totalWidth) scrollX = W;
+  const baseY = Math.floor((H - 7) / 2);
+  let cx = Math.floor(scrollX);
+  for (const ch of SCROLL_TEXT) {
+    if (cx > -5 && cx < W) {
+      const hue = ((timeMs * 0.0001) + cx / W) % 1;
+      drawGlyph(cx, baseY, ch, hsvToRgb(hue, 0.9, 1));
+    }
+    cx += charPitch;
+  }
+  timeMs += dt;
+}
+
+function rings(dt) {
+  timeMs += dt;
+  const t = timeMs * 0.001;
+  const cx = (W - 1) / 2;
+  const cy = (H - 1) / 2;
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const d = Math.sqrt((x - cx) ** 2 + (y - cy) ** 2);
+      const v = (Math.sin(d * 0.7 - t * 4) + 1) / 2;
+      const h = ((d * 0.04) + t * 0.15) % 1;
+      const [r, g, b] = hsvToRgb(h, 1, v * v);
+      setPixel(x, y, r, g, b);
+    }
+  }
+}
+
+const MATRIX_COLS = 8;
+const matrixDrops = [];
+function makeDrop(spread) {
+  return {
+    headY: spread ? -Math.random() * 80 : -8,
+    speed: 14 + Math.random() * 28,
+    length: 3 + Math.floor(Math.random() * 5),
+    chars: Array.from({ length: 12 }, () => String(Math.floor(Math.random() * 10))),
+  };
+}
+function initMatrix() {
+  matrixDrops.length = 0;
+  for (let c = 0; c < MATRIX_COLS; c++) matrixDrops.push(makeDrop(true));
+}
+function matrixRain(dt) {
+  fadePixels(Math.max(1, Math.round(dt * 0.18)));
+  for (let c = 0; c < MATRIX_COLS; c++) {
+    const d = matrixDrops[c];
+    d.headY += d.speed * dt * 0.001;
+    if (d.headY - d.length * 8 > H) { matrixDrops[c] = makeDrop(false); continue; }
+    for (let i = 0; i < d.length; i++) {
+      const gy = Math.floor(d.headY) - i * 8;
+      if (gy < -7 || gy >= H) continue;
+      const ch = d.chars[(i + Math.floor(d.headY / 8) + 999) % d.chars.length];
+      const col = i === 0 ? [200, 255, 220] : [0, Math.floor(255 * (1 - i / d.length) ** 2), 0];
+      drawGlyph(c * 5, gy, ch, col);
+    }
+    if (Math.random() < 0.06) d.chars[Math.floor(Math.random() * d.chars.length)] = String(Math.floor(Math.random() * 10));
+  }
+}
+
+// ─── Snake (40×64 native, A* pathfinding) ────────────────────────────────────
+
+const SNAKE_SPEED_MS = 70;
+const SNAKE_INITIAL = 3;
+let snake = [], snakeDir = 0, snakeLen = SNAKE_INITIAL;
+let snakeColor = [0, 255, 0];
+let snakeFood = { x: 0, y: 0 };
+let snakeFoodHue = 0, snakeLastMove = 0, snakeOver = false, snakeOverFlash = 0;
+
+function snakeReset() {
+  snake = [];
+  for (let i = 0; i < SNAKE_INITIAL; i++) snake.push({ x: 20 - i, y: 32 });
+  snakeLen = SNAKE_INITIAL; snakeDir = 0; snakeColor = [0, 255, 0];
+  snakeOver = false; snakeOverFlash = 0;
+  snakePlaceFood();
+}
+function snakePlaceFood() {
+  while (true) {
+    const fx = Math.floor(Math.random() * W), fy = Math.floor(Math.random() * H);
+    let collide = false;
+    for (let i = 0; i < snakeLen; i++) if (snake[i].x === fx && snake[i].y === fy) { collide = true; break; }
+    if (!collide) { snakeFood = { x: fx, y: fy }; return; }
+  }
+}
+function snakeIsSafe(x, y) {
+  x = ((x % W) + W) % W; y = ((y % H) + H) % H;
+  for (let i = 0; i < snakeLen - 1; i++) if (snake[i].x === x && snake[i].y === y) return false;
+  return true;
+}
+function snakeManhattan(a, b) {
+  let dx = Math.abs(a.x - b.x), dy = Math.abs(a.y - b.y);
+  if (dx > W / 2) dx = W - dx;
+  if (dy > H / 2) dy = H - dy;
+  return dx + dy;
+}
+function snakeAStar(start, goal) {
+  const N = W * H;
+  const closed = new Uint8Array(N), inOpen = new Uint8Array(N);
+  const gScore = new Int32Array(N).fill(0xFFFF);
+  const fScore = new Int32Array(N).fill(0xFFFF);
+  const cameFrom = new Int32Array(N).fill(-1);
+  const open = [];
+  const startIdx = start.y * W + start.x;
+  gScore[startIdx] = 0;
+  fScore[startIdx] = snakeManhattan(start, goal);
+  open.push(startIdx); inOpen[startIdx] = 1;
+  let limit = N * 2;
+  while (open.length > 0 && limit-- > 0) {
+    let bestI = 0;
+    for (let i = 1; i < open.length; i++) if (fScore[open[i]] < fScore[open[bestI]]) bestI = i;
+    const cur = open[bestI];
+    if (cur === goal.y * W + goal.x) {
+      const path = [];
+      let n = cur;
+      while (n !== -1) {
+        path.push({ x: n % W, y: (n / W) | 0 });
+        if (n === startIdx) break;
+        n = cameFrom[n];
+      }
+      path.reverse();
+      return path;
+    }
+    open[bestI] = open[open.length - 1]; open.pop(); inOpen[cur] = 0; closed[cur] = 1;
+    const cx = cur % W, cy = (cur / W) | 0;
+    const dx = [1, 0, -1, 0], dy = [0, 1, 0, -1];
+    for (let d = 0; d < 4; d++) {
+      let nx = cx + dx[d], ny = cy + dy[d];
+      if (nx < 0) nx = W - 1; if (nx >= W) nx = 0;
+      if (ny < 0) ny = H - 1; if (ny >= H) ny = 0;
+      if (!snakeIsSafe(nx, ny)) continue;
+      const nIdx = ny * W + nx;
+      if (closed[nIdx]) continue;
+      const tentative = gScore[cur] + 1;
+      if (!inOpen[nIdx]) { open.push(nIdx); inOpen[nIdx] = 1; }
+      else if (tentative >= gScore[nIdx]) continue;
+      cameFrom[nIdx] = cur;
+      gScore[nIdx] = tentative;
+      fScore[nIdx] = tentative + snakeManhattan({ x: nx, y: ny }, goal);
+    }
+  }
+  return null;
+}
+function snakeDirTo(from, to) {
+  let dx = to.x - from.x, dy = to.y - from.y;
+  if (Math.abs(dx) > W / 2) dx = dx > 0 ? dx - W : dx + W;
+  if (Math.abs(dy) > H / 2) dy = dy > 0 ? dy - H : dy + H;
+  if (Math.abs(dx) >= Math.abs(dy)) return dx > 0 ? 0 : 2;
+  return dy > 0 ? 1 : 3;
+}
+function snakeBestSafe() {
+  const head = snake[0];
+  const dx = [1, 0, -1, 0], dy = [0, 1, 0, -1];
+  let best = snakeDir, bestScore = -1e9;
+  for (let i = 0; i < 4; i++) {
+    let nx = head.x + dx[i], ny = head.y + dy[i];
+    if (nx < 0) nx = W - 1; if (nx >= W) nx = 0;
+    if (ny < 0) ny = H - 1; if (ny >= H) ny = 0;
+    if (!snakeIsSafe(nx, ny)) continue;
+    let safeNeighbors = 0;
+    for (let j = 0; j < 4; j++) {
+      let mx = nx + dx[j], my = ny + dy[j];
+      if (mx < 0) mx = W - 1; if (mx >= W) mx = 0;
+      if (my < 0) my = H - 1; if (my >= H) my = 0;
+      if (snakeIsSafe(mx, my)) safeNeighbors++;
+    }
+    const score = (200 - snakeManhattan({ x: nx, y: ny }, snakeFood) * 2) + safeNeighbors * 10;
+    if (score > bestScore) { bestScore = score; best = i; }
+  }
+  return best;
+}
+function snakeStep() {
+  const head = { ...snake[0] };
+  switch (snakeDir) { case 0: head.x++; break; case 1: head.y++; break; case 2: head.x--; break; case 3: head.y--; break; }
+  if (head.x < 0) head.x = W - 1; if (head.x >= W) head.x = 0;
+  if (head.y < 0) head.y = H - 1; if (head.y >= H) head.y = 0;
+  const ate = head.x === snakeFood.x && head.y === snakeFood.y;
+  if (ate) {
+    snakeColor = hsvToRgb(snakeFoodHue / 360, 1, 1);
+    snakeLen++;
+    if (snake.length < snakeLen) snake.push({ ...snake[snake.length - 1] });
+    snakePlaceFood();
+  }
+  for (let i = snakeLen - 1; i > 0; i--) snake[i] = { ...snake[i - 1] };
+  snake[0] = head;
+  for (let i = 1; i < snakeLen; i++) if (head.x === snake[i].x && head.y === snake[i].y) { snakeOver = true; return; }
+  const path = snakeAStar(snake[0], snakeFood);
+  if (path && path.length > 1) snakeDir = snakeDirTo(snake[0], path[1]);
+  else snakeDir = snakeBestSafe();
+}
+function snakeAnim(dt) {
+  clearPixels();
+  if (snakeOver) {
+    snakeOverFlash += dt;
+    const on = ((snakeOverFlash / 250) | 0) % 2 === 0;
+    if (on) for (let i = 0; i < snakeLen; i++) setPixel(snake[i].x, snake[i].y, 200, 30, 30);
+    if (snakeOverFlash > 1500) snakeReset();
+    return;
+  }
+  snakeFoodHue = (snakeFoodHue + dt * 0.2) % 360;
+  snakeLastMove += dt;
+  if (snakeLastMove >= SNAKE_SPEED_MS) { snakeLastMove = 0; snakeStep(); }
+  for (let i = 0; i < snakeLen; i++) {
+    const fade = Math.max(50, 255 - i * 2) / 255;
+    setPixel(snake[i].x, snake[i].y, snakeColor[0] * fade, snakeColor[1] * fade, snakeColor[2] * fade);
+  }
+  const pulse = 0.5 + 0.5 * Math.sin(performance.now() / 100);
+  setPixel(snakeFood.x, snakeFood.y, ...hsvToRgb(snakeFoodHue / 360, 1, pulse));
+}
+
+// ─── Thumbs up (40×64 native, replaces 10×10 Bims-Hamis) ─────────────────────
+
+const THUMB_PURPLE      = [81, 51, 109];
+const THUMB_PURPLE_DARK = [46, 26, 64];
+const THUMB_PURPLE_HI   = [128, 107, 155];
+const THUMB_YELLOW      = [191, 230, 48];
+const THUMB_NAIL        = [255, 250, 200];
+const THUMB_SKIN_LINE   = [70, 40, 95];
+
+function thumbsUp(dt) {
+  clearPixels();
+  timeMs += dt;
+  const t = timeMs * 0.001;
+  const sway = Math.sin(t * 1.6) * 1.2;
+  const cx = 20 + Math.round(sway);
+
+  // Layout (y top-to-bottom):
+  //   thumb     y=8..21   (h=14)
+  //   fist      y=22..39  (h=18)
+  //   cuff      y=40..55  (h=16)
+  //   yellow band on top row of cuff (y=40..41)
+  const fistY0 = 22, fistH = 18;
+  const cuffY0 = 40, cuffH = 16;
+  const thumbCX = cx + 6, thumbY0 = 8, thumbH = 14;
+
+  // Thumb (drawn first, behind fist where they meet)
+  fillRoundedRect(thumbCX - 3, thumbY0, 7, thumbH, 3, THUMB_PURPLE);
+  // Thumbnail
+  fillEllipse(thumbCX, thumbY0 + 2, 2, 2, THUMB_NAIL);
+  // Highlight stripe on the side of the thumb
+  fillRect(thumbCX - 2, thumbY0 + 4, 1, 7, THUMB_PURPLE_HI);
+  // Thumb knuckle line halfway down
+  setPixel(thumbCX - 1, thumbY0 + 7, ...THUMB_SKIN_LINE);
+  setPixel(thumbCX,     thumbY0 + 7, ...THUMB_SKIN_LINE);
+  setPixel(thumbCX + 1, thumbY0 + 7, ...THUMB_SKIN_LINE);
+
+  // Cuff (drawn before fist so the fist sits in front)
+  fillRoundedRect(cx - 9, cuffY0, 18, cuffH, 3, THUMB_PURPLE_DARK);
+  // Yellow hem band on top row(s) of cuff (cleared first to ensure coverage)
+  fillRect(cx - 9, cuffY0, 18, 2, THUMB_YELLOW);
+
+  // Fist (drawn on top — its bottom edge sits flush with the cuff hem)
+  fillRoundedRect(cx - 9, fistY0, 18, fistH, 4, THUMB_PURPLE);
+  // Knuckle row at top of fist
+  for (let i = 0; i < 4; i++) {
+    const kx = cx - 7 + i * 4;
+    setPixel(kx, fistY0 + 1, ...THUMB_PURPLE_HI);
+    setPixel(kx, fistY0 + 2, ...THUMB_SKIN_LINE);
+  }
+  // Finger creases — horizontal divots across fist
+  for (let dx = -7; dx <= 7; dx++) {
+    setPixel(cx + dx, fistY0 + 7, ...THUMB_SKIN_LINE);
+    setPixel(cx + dx, fistY0 + 12, ...THUMB_SKIN_LINE);
+  }
+  // Subtle highlight running down the left edge of the fist
+  for (let dy = 2; dy < fistH - 2; dy++) setPixel(cx - 8, fistY0 + dy, ...THUMB_PURPLE_HI);
+
+  // Sparkles flying around the thumb tip
+  for (let i = 0; i < 6; i++) {
+    const ph = t * 1.2 + i * 1.05;
+    const life = (Math.sin(ph * 2.4) + 1) / 2;
+    if (life < 0.55) continue;
+    const angle = i * (Math.PI * 2 / 6) + t * 0.4;
+    const radius = 11 + Math.sin(ph * 1.7) * 3;
+    const sx = Math.round(thumbCX + Math.cos(angle) * radius);
+    const sy = Math.round(thumbY0 + 4 + Math.sin(angle) * radius * 0.7);
+    const c = scale(THUMB_YELLOW, life);
+    setPixel(sx, sy, ...c);
+    setPixel(sx - 1, sy, ...scale(c, 0.6));
+    setPixel(sx + 1, sy, ...scale(c, 0.6));
+    setPixel(sx, sy - 1, ...scale(c, 0.6));
+    setPixel(sx, sy + 1, ...scale(c, 0.6));
+  }
+}
+
+// ─── Pride flag (40×64 native, replaces 10×10 Bims-Pride) ────────────────────
+// Five stripes + flagpole on the left, with sin-wave displacement that grows
+// stronger toward the flag's free edge, and per-column shading for depth.
+
+const PRIDE_STRIPES = [
+  [208, 23, 22],   // red
+  [251, 192, 45],  // yellow
+  [43, 175, 43],   // green
+  [3, 169, 244],   // blue
+  [156, 39, 176],  // purple
+];
+
+function prideFlag(dt) {
+  clearPixels();
+  timeMs += dt;
+  const t = timeMs * 0.001;
+
+  // Flagpole on far left (x=0..2)
+  fillRect(0, 0, 3, H, [120, 120, 130]);
+  // Pole highlight
+  fillRect(0, 0, 1, H, [180, 180, 190]);
+  // Pole cap (golden ball at top)
+  fillCircle(1, 4, 2, [255, 200, 60]);
+
+  // Flag area: x = 4..39 = 36 wide, y = 6..55 = 50 tall, 5 stripes × 10 px
+  const flagX0 = 4, flagY0 = 6;
+  const flagW = W - flagX0, flagH = 50;
+
+  for (let x = 0; x < flagW; x++) {
+    const u = x / (flagW - 1);            // 0 at pole, 1 at free edge
+    // Wave: amplitude grows away from pole (up to ±3 px)
+    const wave = Math.sin(x * 0.35 - t * 3.2) * 3 * u;
+    // Per-column shading: gentle 0.6..1.0 brightness with phase-shifted sin
+    const shade = 0.65 + 0.35 * (0.5 + 0.5 * Math.cos(x * 0.28 - t * 2));
+    for (let y = 0; y < flagH; y++) {
+      // Determine which stripe (after wave displacement)
+      const localY = y - wave;
+      if (localY < 0 || localY >= flagH) continue;
+      const stripe = Math.floor(localY / 10);
+      if (stripe < 0 || stripe >= PRIDE_STRIPES.length) continue;
+      const c = PRIDE_STRIPES[stripe];
+      setPixel(flagX0 + x, flagY0 + y,
+        Math.round(c[0] * shade),
+        Math.round(c[1] * shade),
+        Math.round(c[2] * shade));
+    }
+  }
+
+  // Edge shadow at the flag's bottom hem
+  for (let x = 0; x < flagW; x++) {
+    const u = x / (flagW - 1);
+    const wave = Math.sin(x * 0.35 - t * 3.2) * 3 * u;
+    const y = Math.round(flagY0 + flagH + wave);
+    if (y >= 0 && y < H) setPixel(flagX0 + x, y, 50, 50, 60);
+  }
+}
+
+// ─── Cat — A Day in the Life (all 5 scenes redrawn at 40×64 native) ──────────
+
+const FUR_HD       = [255, 130, 30];
+const FUR_DK       = [165, 75, 12];
+const FUR_BELLY_HD = [255, 200, 130];
+const EYE_GREEN_HD = [80, 255, 50];
+const EYE_PUPIL    = [20, 30, 10];
+const EYE_WHITE    = [240, 240, 220];
+const NOSE_HD      = [255, 110, 150];
+const MOUTH_HD     = [120, 50, 30];
+const WHISKER_HD   = [220, 200, 180];
+const LASER_HD     = [255, 30, 30];
+const LASER_GLOW_HD= [180, 0, 0];
+const ZZZ_HD       = [120, 170, 255];
+const CUP_HD       = [180, 230, 255];
+const CUP_DK       = [80, 130, 170];
+const TABLE_HD     = [110, 75, 40];
+const TABLE_DK     = [70, 45, 22];
+const DUST_HD      = [220, 200, 150];
+
+const CAT_SCENE_MS = [6000, 7000, 5000, 6500, 7000];
+let catScene = 0, catSceneStart = 0, catTotalT = 0;
+
+function catReset() { catScene = 0; catSceneStart = 0; catTotalT = 0; laserState = null; }
+
+// Scene 1 — large cat face, blinking
+function catFaceHD(t) {
+  const cx = 20, cy = 32;
+  // Head shape (oval)
+  fillEllipse(cx, cy, 14, 15, FUR_HD);
+  // Tabby stripes on forehead
+  for (let i = -2; i <= 2; i++) {
+    const sx = cx + i * 3;
+    setPixel(sx, cy - 11, ...FUR_DK);
+    setPixel(sx, cy - 10, ...FUR_DK);
+  }
+  // Ears (filled triangles)
+  fillTriangle(cx - 14, cy - 10, cx - 6, cy - 10, cx - 10, cy - 22, FUR_HD);
+  fillTriangle(cx + 14, cy - 10, cx + 6, cy - 10, cx + 10, cy - 22, FUR_HD);
+  // Inner ears (pink)
+  fillTriangle(cx - 12, cy - 11, cx - 8, cy - 11, cx - 10, cy - 18, NOSE_HD);
+  fillTriangle(cx + 12, cy - 11, cx + 8, cy - 11, cx + 10, cy - 18, NOSE_HD);
+
+  // Cheeks (lighter belly fur)
+  fillEllipse(cx, cy + 4, 8, 5, FUR_BELLY_HD);
+
+  // Eyes — blink every 2.5 s, occasional slit-eye squint every 10 s
+  const cycle = t % 2500;
+  const blinking = cycle < 220;
+  const squint = (t % 10000) < 800 && !blinking;
+
+  if (blinking) {
+    // Closed eyes: arcs (curved lines)
+    for (let dx = -3; dx <= 3; dx++) {
+      const dy = Math.round(Math.cos(dx / 3 * Math.PI / 2) * 1);
+      setPixel(cx - 7 + dx, cy - 4 + dy, ...FUR_DK);
+      setPixel(cx + 7 + dx, cy - 4 + dy, ...FUR_DK);
+    }
+  } else if (squint) {
+    // Slit eyes
+    fillEllipse(cx - 7, cy - 4, 4, 1, EYE_PUPIL);
+    fillEllipse(cx + 7, cy - 4, 4, 1, EYE_PUPIL);
+    setPixel(cx - 7, cy - 4, ...EYE_GREEN_HD);
+    setPixel(cx + 7, cy - 4, ...EYE_GREEN_HD);
+  } else {
+    fillCircle(cx - 7, cy - 4, 4, EYE_WHITE);
+    fillCircle(cx + 7, cy - 4, 4, EYE_WHITE);
+    fillCircle(cx - 7, cy - 4, 3, EYE_GREEN_HD);
+    fillCircle(cx + 7, cy - 4, 3, EYE_GREEN_HD);
+    // Slit pupils
+    fillRect(cx - 8, cy - 6, 2, 5, EYE_PUPIL);
+    fillRect(cx + 6, cy - 6, 2, 5, EYE_PUPIL);
+    // Tiny highlights
+    setPixel(cx - 8, cy - 6, 255, 255, 255);
+    setPixel(cx + 6, cy - 6, 255, 255, 255);
+  }
+
+  // Nose
+  fillTriangle(cx - 2, cy + 3, cx + 2, cy + 3, cx, cy + 6, NOSE_HD);
+  setPixel(cx, cy + 5, ...MOUTH_HD);
+
+  // Mouth (W-shape)
+  drawLine(cx, cy + 7, cx - 3, cy + 9, MOUTH_HD);
+  drawLine(cx, cy + 7, cx + 3, cy + 9, MOUTH_HD);
+  drawLine(cx - 3, cy + 9, cx - 4, cy + 8, MOUTH_HD);
+  drawLine(cx + 3, cy + 9, cx + 4, cy + 8, MOUTH_HD);
+
+  // Whiskers
+  for (let i = 0; i < 8; i++) {
+    setPixel(cx - 14 - i, cy + 3, ...WHISKER_HD);
+    setPixel(cx - 14 - i, cy + 6, ...WHISKER_HD);
+    setPixel(cx + 14 + i, cy + 3, ...WHISKER_HD);
+    setPixel(cx + 14 + i, cy + 6, ...WHISKER_HD);
+  }
+}
+
+// Scene 2 — laser chase
+let laserState = null;
+function catLaserChaseHD(t) {
+  if (!laserState) {
+    laserState = { laser: { x: 20, y: 32 }, cat: { x: 8, y: 50 }, lastTeleport: 0, lastJitter: 0, teleportIv: 1100, hover: 0 };
+  }
+  const s = laserState;
+  if (t - s.lastJitter > 60) {
+    s.lastJitter = t;
+    s.laser.x += (Math.random() * 2 - 1) * 2.2;
+    s.laser.y += (Math.random() * 2 - 1) * 2.2;
+  }
+  if (t - s.lastTeleport > s.teleportIv) {
+    s.lastTeleport = t;
+    s.teleportIv = 700 + Math.random() * 1200;
+    s.laser.x = 4 + Math.random() * (W - 8);
+    s.laser.y = 4 + Math.random() * (H - 12);
+  }
+  s.laser.x = Math.max(2, Math.min(W - 3, s.laser.x));
+  s.laser.y = Math.max(2, Math.min(H - 4, s.laser.y));
+  // Springy pursuit
+  s.cat.x += (s.laser.x - s.cat.x) * 0.10;
+  s.cat.y += (s.laser.y + 2 - s.cat.y) * 0.10;
+  s.hover = (s.hover + 0.18) % (Math.PI * 2);
+
+  // Mini cat sprite (~10 wide × 8 tall): facing toward laser
+  const facing = s.laser.x >= s.cat.x ? 1 : -1;
+  const cx = Math.round(s.cat.x), cy = Math.round(s.cat.y);
+  // Body (oval)
+  fillEllipse(cx, cy, 5, 3, FUR_HD);
+  // Head
+  fillCircle(cx + 4 * facing, cy - 1, 3, FUR_HD);
+  // Ears
+  setPixel(cx + 3 * facing, cy - 4, ...FUR_HD);
+  setPixel(cx + 5 * facing, cy - 4, ...FUR_HD);
+  // Eye toward laser
+  setPixel(cx + 5 * facing, cy - 1, ...EYE_GREEN_HD);
+  // Legs
+  setPixel(cx - 3, cy + 3, ...FUR_DK);
+  setPixel(cx, cy + 3, ...FUR_DK);
+  setPixel(cx + 3, cy + 3, ...FUR_DK);
+  // Tail (whips opposite direction with time)
+  const tailWag = Math.sin(t * 0.012) * 3;
+  const txEnd = cx - 7 * facing;
+  const tyEnd = cy + Math.round(tailWag);
+  drawLine(cx - 4 * facing, cy, txEnd, tyEnd, FUR_DK);
+
+  // Laser (bright dot + glow halo)
+  const lx = Math.round(s.laser.x), ly = Math.round(s.laser.y);
+  for (let dy = -2; dy <= 2; dy++) {
+    for (let dx = -2; dx <= 2; dx++) {
+      const d2 = dx * dx + dy * dy;
+      if (d2 > 4) continue;
+      const k = 1 - d2 / 4;
+      setPixel(lx + dx, ly + dy, LASER_GLOW_HD[0] * k, LASER_GLOW_HD[1] * k, LASER_GLOW_HD[2] * k);
+    }
+  }
+  fillCircle(lx, ly, 1, LASER_HD);
+  setPixel(lx, ly, 255, 200, 200);
+}
+
+// Scene 3 — pounce
+function catSideHD(baseX, baseY, crouch, airborne) {
+  // Cat occupies ~10 wide × 6 tall
+  if (airborne) {
+    // Stretched flying pose
+    fillEllipse(baseX + 4, baseY - 1, 5, 2, FUR_HD);
+    fillCircle(baseX + 8, baseY - 1, 2, FUR_HD);             // head
+    setPixel(baseX + 7, baseY - 2, ...FUR_HD);                // ear
+    setPixel(baseX + 10, baseY - 2, ...EYE_GREEN_HD);          // eye
+    drawLine(baseX, baseY - 1, baseX - 4, baseY - 1, FUR_DK); // tail
+    setPixel(baseX + 3, baseY + 1, ...FUR_DK);
+    setPixel(baseX + 6, baseY + 1, ...FUR_DK);
+    return;
+  }
+  const bodyTop = baseY - 4 + crouch * 2;
+  fillEllipse(baseX + 4, bodyTop + 2, 5, 2, FUR_HD);          // body
+  fillCircle(baseX + 8, bodyTop + 1, 2, FUR_HD);              // head
+  setPixel(baseX + 7, bodyTop - 1, ...FUR_HD);                 // ear front
+  setPixel(baseX + 9, bodyTop - 1, ...FUR_HD);                 // ear back
+  setPixel(baseX + 10, bodyTop + 1, ...EYE_GREEN_HD);          // eye
+  // Tail up
+  drawLine(baseX, bodyTop + 1, baseX - 3, bodyTop - 2, FUR_DK);
+  // Legs
+  setPixel(baseX + 2, bodyTop + 4, ...FUR_DK);
+  setPixel(baseX + 3, bodyTop + 4, ...FUR_DK);
+  setPixel(baseX + 5, bodyTop + 4, ...FUR_DK);
+  setPixel(baseX + 6, bodyTop + 4, ...FUR_DK);
+}
+
+function catPounceHD(t) {
+  // Ground line near bottom
+  const groundY = 50;
+  fillRect(0, groundY + 1, W, 2, [40, 25, 12]);
+  for (let i = 0; i < W; i += 4) setPixel(i, groundY, ...[60, 40, 22]);
+
+  const startX = 4, endX = 26;
+  if (t < 1300) {
+    const wiggle = ((t / 130) | 0) % 2;
+    catSideHD(startX + wiggle, groundY, 1, false);
+    setPixel(startX + 2, groundY + 1, ...DUST_HD);
+  } else if (t < 1500) {
+    catSideHD(startX, groundY, 0, false);
+  } else if (t < 3000) {
+    const u = (t - 1500) / 1500;
+    const x = Math.round(startX + u * (endX - startX));
+    const y = Math.round(groundY - 18 * Math.sin(u * Math.PI));
+    catSideHD(x, y, 0, true);
+    if (u < 0.2) {
+      const a = (1 - u / 0.2);
+      const c = scale(DUST_HD, a);
+      setPixel(startX + 1, groundY + 1, ...c);
+      setPixel(startX + 2, groundY + 1, ...c);
+      setPixel(startX + 4, groundY + 1, ...c);
+    }
+  } else {
+    const tailWag = ((t / 200) | 0) % 2;
+    catSideHD(endX, groundY, 0, false);
+    drawLine(endX, groundY - 3, endX - 4, groundY - 6 - tailWag, FUR_DK);
+    const since = t - 3000;
+    if (since < 800) {
+      const b = 1 - since / 800;
+      const c = scale(DUST_HD, b);
+      setPixel(endX + 1, groundY + 1, ...c);
+      setPixel(endX + 3, groundY + 1, ...c);
+      setPixel(endX + 4, groundY, ...c);
+    }
+  }
+}
+
+// Scene 4 — knock cup off table
+function catKnockHD(t) {
+  // Table
+  const tableY = 38;
+  fillRect(2, tableY, W - 4, 3, TABLE_HD);
+  fillRect(2, tableY + 3, W - 4, 1, TABLE_DK);
+  // Legs
+  fillRect(5, tableY + 3, 2, 16, TABLE_DK);
+  fillRect(W - 7, tableY + 3, 2, 16, TABLE_DK);
+
+  // Cat sits on table left side
+  catSideHD(4, tableY - 1, 0, false);
+
+  // Cup default position (right side of table)
+  const cupX0 = 26;
+  const cupTopY = tableY - 8;
+  function drawCup(x, y) {
+    fillRoundedRect(x, y + 1, 6, 7, 1, CUP_HD);
+    fillRect(x, y, 6, 1, CUP_DK);
+    // Handle
+    setPixel(x + 6, y + 3, ...CUP_DK);
+    setPixel(x + 6, y + 4, ...CUP_DK);
+    setPixel(x + 6, y + 5, ...CUP_DK);
+    // Highlight
+    setPixel(x + 1, y + 2, ...EYE_WHITE);
+  }
+
+  if (t < 2200) {
+    drawCup(cupX0, cupTopY);
+    if (((t / 250) | 0) % 2) setPixel(7, tableY - 6, ...FUR_HD);
+  } else if (t < 2700) {
+    const reach = 1 + Math.floor((t - 2200) / 70);
+    for (let i = 0; i < reach; i++) {
+      setPixel(15 + i, tableY - 5, ...FUR_HD);
+      setPixel(15 + i, tableY - 4, ...FUR_HD);
+    }
+    drawCup(cupX0 - Math.min(2, Math.floor(reach * 0.3)), cupTopY);
+  } else {
+    const dt2 = (t - 2700) / 1000;
+    const cx = cupX0 + Math.round(dt2 * 6);
+    const cy = cupTopY + Math.round(0.5 * 80 * dt2 * dt2);
+    drawCup(cx, cy);
+    // Cat leans over
+    catSideHD(4, tableY - 1, 0, false);
+    setPixel(15, tableY - 5, ...FUR_HD);
+    setPixel(16, tableY - 5, ...FUR_HD);
+    // Splash near floor
+    if (cy > H - 6) {
+      for (let i = -3; i <= 3; i++) {
+        setPixel(cx + 3 + i, H - 1 - Math.abs(i), ...CUP_DK);
+      }
+    }
+  }
+}
+
+// Scene 5 — sleep
+function catSleepHD(t) {
+  // Sleeping mat
+  const matY = 50;
+  fillRoundedRect(6, matY, 28, 6, 2, [60, 50, 75]);
+
+  // Curled cat (fills matY-12..matY+2)
+  const cx = 20, cy = matY - 4;
+  // Body curl (oval)
+  fillEllipse(cx, cy, 12, 7, FUR_HD);
+  // Belly highlight
+  fillEllipse(cx + 1, cy + 2, 8, 3, FUR_BELLY_HD);
+  // Tail wraps around
+  drawLine(cx + 11, cy, cx + 6, cy - 4, FUR_DK);
+  drawLine(cx + 6, cy - 4, cx + 1, cy - 4, FUR_DK);
+  drawLine(cx + 1, cy - 4, cx - 3, cy - 2, FUR_DK);
+  // Head tucked
+  fillCircle(cx - 9, cy + 1, 3, FUR_HD);
+  // Ear
+  setPixel(cx - 11, cy - 2, ...FUR_HD);
+  setPixel(cx - 8, cy - 2, ...FUR_HD);
+  // Closed eye line
+  drawLine(cx - 11, cy + 1, cx - 8, cy + 1, MOUTH_HD);
+  // Nose
+  setPixel(cx - 12, cy + 2, ...NOSE_HD);
+
+  // Breathing: gentle vertical pulse on body
+  const breath = 1 + 0.06 * Math.sin(t / 500);
+  if (breath > 1.02) {
+    // add a thin highlight on top of body to suggest expansion
+    drawLine(cx - 6, cy - 6, cx + 6, cy - 6, scale(FUR_HD, 0.6));
+  }
+
+  // Floating Z's (drift up and right, fade)
+  const Z_PERIOD = 1700;
+  for (let i = 0; i < 3; i++) {
+    const tz = t - i * 600;
+    if (tz < 0) continue;
+    const phase = tz % Z_PERIOD;
+    const u = phase / Z_PERIOD;
+    const zx = cx - 4 + Math.round(u * 16);
+    const zy = cy - 5 - Math.round(u * 30);
+    const fade = 1 - u;
+    drawZ(zx, zy, scale(ZZZ_HD, fade), 1 + Math.floor(u * 2));
+  }
+}
+
+function drawZ(x, y, c, scale) {
+  // Small Z, scaled up by integer factor (1, 2, 3)
+  const Z = [
+    [1, 1, 1, 1, 1],
+    [0, 0, 0, 1, 0],
+    [0, 0, 1, 0, 0],
+    [0, 1, 0, 0, 0],
+    [1, 1, 1, 1, 1],
+  ];
+  for (let yy = 0; yy < 5; yy++) {
+    for (let xx = 0; xx < 5; xx++) {
+      if (!Z[yy][xx]) continue;
+      for (let dy = 0; dy < scale; dy++)
+        for (let dx = 0; dx < scale; dx++)
+          setPixel(x + xx * scale + dx, y + yy * scale + dy, c[0], c[1], c[2]);
+    }
+  }
+}
+
+function catAnim(dt) {
+  catTotalT += dt;
+  const elapsed = catTotalT - catSceneStart;
+  if (elapsed >= CAT_SCENE_MS[catScene]) {
+    catScene = (catScene + 1) % CAT_SCENE_MS.length;
+    catSceneStart = catTotalT;
+    if (catScene === 1) laserState = null;
+  }
+  clearPixels();
+  const e = catTotalT - catSceneStart;
+  switch (catScene) {
+    case 0: catFaceHD(e); break;
+    case 1: catLaserChaseHD(e); break;
+    case 2: catPounceHD(e); break;
+    case 3: catKnockHD(e); break;
+    case 4: catSleepHD(e); break;
+  }
+}
+
+// ─── Bad Apple HD (40×30 letterboxed via <video> + downsampling) ─────────────
+
+const baVideo = document.getElementById('ba-video');
+const baOffscreen = document.createElement('canvas');
+baOffscreen.width = 40; baOffscreen.height = 30;
+const baCtx = baOffscreen.getContext('2d', { willReadFrequently: true });
+const BA_MODES = ['classic', 'rainbow', 'fire', 'matrix', 'ocean', 'pulse'];
+let baMode = 1, baHue = 0;
+let baReady = false, baError = null, baLastT = 0, baJustLooped = false;
+
+baVideo.addEventListener('canplay', () => { baReady = true; });
+baVideo.addEventListener('error', () => { baError = 'video error'; });
+
+function baReset() {
+  baMode = 1; baHue = 0; baJustLooped = false;
+  if (baReady) {
+    baVideo.currentTime = 0;
+    baVideo.play().catch(() => {/* autoplay blocked, will retry on next tick */});
+  }
+}
+
+function baColor(on) {
+  if (!on) return [0, 0, 0];
+  switch (BA_MODES[baMode]) {
+    case 'classic': return [255, 255, 255];
+    case 'rainbow': return chsv(baHue, 255, 255);
+    case 'fire':    return chsv(rint(0, 30), 255, rint(180, 255));
+    case 'matrix':  return [40, 255, 40];
+    case 'ocean':   {
+      const wave = 128 + Math.floor(127 * Math.sin(performance.now() / 300 + baHue));
+      return chsv(128 + (baHue >> 2), 255, wave);
+    }
+    case 'pulse':   {
+      const v = 140 + Math.floor(115 * Math.sin(performance.now() / 220));
+      return chsv(220, 255, v);
+    }
+  }
+  return [255, 255, 255];
+}
+
+function baAnim(dt) {
+  clearPixels();
+  if (baError) {
+    drawCenteredString('VIDEO', H / 2 - 4, [200, 60, 60]);
+    drawCenteredString('ERROR', H / 2 + 4, [200, 60, 60]);
+    return;
+  }
+  if (!baReady || baVideo.readyState < 2) {
+    drawCenteredString('LOADING', H / 2 - 3, [80, 200, 80]);
+    // pulse dots
+    const pulse = (Math.sin(performance.now() / 200) + 1) / 2;
+    for (let i = 0; i < 3; i++) {
+      const dotX = 14 + i * 6;
+      const ox = ((performance.now() / 300) | 0) % 3 === i ? [255, 255, 255] : [40, 100, 40];
+      fillCircle(dotX, H / 2 + 6, 1, ox);
+    }
+    return;
+  }
+  // Try to keep video playing (autoplay may have been deferred)
+  if (baVideo.paused) baVideo.play().catch(() => {});
+
+  // Detect loop: when currentTime drops to near 0, advance color mode
+  if (baVideo.currentTime < 0.2 && baLastT > 1) {
+    if (!baJustLooped) {
+      baMode = (baMode + 1) % BA_MODES.length;
+      baJustLooped = true;
+    }
+  } else if (baVideo.currentTime > 1) {
+    baJustLooped = false;
+  }
+  baLastT = baVideo.currentTime;
+  baHue = (baHue + 1) & 0xff;
+
+  // Sample video at 40×30
+  baCtx.drawImage(baVideo, 0, 0, 40, 30);
+  const data = baCtx.getImageData(0, 0, 40, 30).data;
+  const yOff = 17; // letterbox: 64 - 30 = 34 → 17 px above & below
+  for (let y = 0; y < 30; y++) {
+    for (let x = 0; x < 40; x++) {
+      const i = (y * 40 + x) * 4;
+      const lum = data[i] * 0.3 + data[i + 1] * 0.59 + data[i + 2] * 0.11;
+      const on = lum > 128;
+      if (!on) continue;
+      const c = baColor(true);
+      setPixel(x, yOff + y, c[0], c[1], c[2]);
+    }
+  }
+  // Frame border (so the letterboxed area reads as a screen)
+  for (let x = 0; x < W; x++) {
+    setPixel(x, yOff - 1, 30, 30, 30);
+    setPixel(x, yOff + 30, 30, 30, 30);
+  }
+}
+
+// ─── Animation registry ──────────────────────────────────────────────────────
+
+const ANIMATIONS = [
+  { name: 'Rainbow scroll',   fn: rainbowScroll, init: () => clearPixels() },
+  { name: 'Plasma',           fn: plasma,        init: () => clearPixels() },
+  { name: 'Sparkle',          fn: sparkle,       init: () => { clearPixels(); sparkleAccum = 0; } },
+  { name: 'Scrolling text',   fn: textScroll,    init: () => { clearPixels(); scrollX = W; } },
+  { name: 'Concentric rings', fn: rings,         init: () => clearPixels() },
+  { name: 'Matrix rain',      fn: matrixRain,    init: () => { clearPixels(); initMatrix(); } },
+  { name: 'Snake (A*)',       fn: snakeAnim,     init: () => { clearPixels(); snakeReset(); } },
+  { name: 'Thumbs up',        fn: thumbsUp,      init: () => clearPixels() },
+  { name: 'Pride flag',       fn: prideFlag,     init: () => clearPixels() },
+  { name: 'Cat — a day',      fn: catAnim,       init: () => { clearPixels(); catReset(); } },
+  { name: 'Bad Apple',        fn: baAnim,        init: () => { clearPixels(); baReset(); } },
+];
+
+let currentAnim = 0;
+let paused = false;
+
+function selectAnim(idx) {
+  currentAnim = ((idx % ANIMATIONS.length) + ANIMATIONS.length) % ANIMATIONS.length;
+  // Pause Bad Apple video when leaving it (so it doesn't keep decoding)
+  if (ANIMATIONS[currentAnim].name !== 'Bad Apple' && !baVideo.paused) baVideo.pause();
+  ANIMATIONS[currentAnim].init();
+  document.getElementById('name').textContent = ANIMATIONS[currentAnim].name;
+  document.getElementById('counter').textContent = `${currentAnim + 1} / ${ANIMATIONS.length}`;
+}
+
+document.getElementById('prev').addEventListener('click', () => selectAnim(currentAnim - 1));
+document.getElementById('next').addEventListener('click', () => selectAnim(currentAnim + 1));
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') { selectAnim(currentAnim + 1); e.preventDefault(); }
+  else if (e.key === 'ArrowLeft') { selectAnim(currentAnim - 1); e.preventDefault(); }
+  else if (e.key === ' ') { paused = !paused; e.preventDefault(); }
+});
+
+// ─── Render loop ─────────────────────────────────────────────────────────────
+
+function render() {
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  const r = SCALE / 2 - 1;
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const i = (y * W + x) * 3;
+      const pr = pixels[i], pg = pixels[i + 1], pb = pixels[i + 2];
+      if (!(pr || pg || pb)) continue;
+      ctx.fillStyle = `rgb(${pr},${pg},${pb})`;
+      ctx.beginPath();
+      ctx.arc(x * SCALE + SCALE / 2, y * SCALE + SCALE / 2, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+}
+
+const fpsEl = document.getElementById('fps');
+let lastFrame = performance.now();
+let fpsAccum = 0, fpsFrames = 0, fpsLastUpdate = lastFrame;
+
+function tick(now) {
+  const dt = Math.min(50, now - lastFrame);
+  lastFrame = now;
+  if (!paused) ANIMATIONS[currentAnim].fn(dt);
+  render();
+  fpsAccum += dt; fpsFrames++;
+  if (now - fpsLastUpdate > 500) {
+    const fps = Math.round((fpsFrames * 1000) / fpsAccum);
+    fpsEl.textContent = `${fps} fps${paused ? ' · paused' : ''}`;
+    fpsAccum = 0; fpsFrames = 0; fpsLastUpdate = now;
+  }
+  requestAnimationFrame(tick);
+}
+
+selectAnim(0);
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>
