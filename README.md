@@ -1,6 +1,6 @@
 # Ultra-High-Density RGB Matrix Badge
 
-A wearable RGB matrix badge featuring 2560 individually addressable LEDs in a compact 100×65mm form factor.
+A wearable RGB matrix badge featuring 2560 individually addressable LEDs on a 71 × 150 mm board with a 62.5 × 104 mm portrait display area.
 
 ## Project Overview
 
@@ -10,8 +10,9 @@ This project implements an ultra-dense LED matrix badge designed for human viewi
 
 | Parameter | Value |
 |-----------|-------|
-| Display Area | 100 mm × 65 mm |
-| Resolution | 64 × 40 pixels (2560 total) |
+| Display Area | 62.5 mm × 104 mm (portrait) |
+| Resolution | 40 × 64 pixels (2560 total) |
+| Board Size | 71 mm × 150 mm, 5 mm corner radius |
 | Pixel Pitch | 1.5625 mm (X) × 1.625 mm (Y) |
 | Target Refresh Rate | 60+ FPS |
 | Power Source | USB-C PD Powerbank |
@@ -35,15 +36,27 @@ Cycle with `←` / `→` arrow keys or the on-screen buttons; `space` pauses.
 
 `nix develop` provides KiCad (with `import pcbnew` working from plain Python), PlatformIO, ffmpeg and the linters. `nix flake show` lists the available commands.
 
+Board layout changes are scripted in `cad/` and checked end to end (outline, lanyard holes, power-entry wiring, DRC with schematic parity) by:
+
+```bash
+python3 cad/test_board.py
+```
+
+Design decisions are recorded in [`docs/adr/`](docs/adr/).
+
 ## Hardware Architecture
 
 ### Two-Board Design
 
 #### 1. Matrix PCB (`cad/led_bage.*`)
+
+![Matrix PCB layout: 71 × 150 mm board, lanyard holes and J2 in the top band, LED field, bulk caps along the bottom](docs/images/matrix-pcb-layout.png)
+
 - Dense 64×40 LED array, 8 chains of 320 LEDs (refs `DA1`..`DH320`)
 - 6-layer stackup: F.Cu | GND | VDD_S | VDD_S | GND | B.Cu, two fanout vias per LED
-- Input protection on board: reverse-polarity P-FET (Si7145DP) + SMBJ6.0A TVS
-- Connectors: J1 data (Molex CLIK-Mate 8-pin), J2 power (JST VH 10-pin, back side)
+- Input protection on board: reverse-polarity P-FET (Si7145DP, drain on the input) + SMBJ6.0CA TVS, copper pours for the ~30 A input path ([ADR 0002](docs/adr/0002-reverse-polarity-power-entry.md))
+- Connectors: J1 data (Molex CLIK-Mate 8-pin), J2 power (JST VH 10-pin, back side, cable exits the top edge)
+- Rounded-rectangle outline with two 5 mm plated lanyard holes in a top band beside J2 ([ADR 0001](docs/adr/0001-board-outline-and-lanyard-mounting.md))
 - Optimized for minimal rework risk
 
 A 100-LED sample board (`cad/led_bage_sample/`) has been fabricated as a reference.
@@ -122,8 +135,8 @@ ESP32-S3 + Logic
 
 **Mapping:**
 - 8 data lanes, each driving 320 pixels
-- Each lane: 8 columns × 40 rows
-- Lanes arranged as vertical stripes across the 64-column display
+- Each lane: 8 rows × 40 columns, serpentine
+- Lanes arranged as horizontal bands down the 64-row display
 
 **Refresh Math (per lane):**
 ```
@@ -224,11 +237,11 @@ Pitch: 1.5625mm (X) × 1.625mm (Y)
 - [x] Matrix PCB: fanout vias, decoupling, bulk caps, 6-layer power planes
 - [x] Matrix PCB: all 8 data chains routed (0 unconnected items in DRC)
 - [x] Matrix PCB: input protection and J1/J2 connectors
+- [x] Matrix PCB: rounded-rectangle outline and lanyard holes
 
 #### Next Steps
 
 1. **Matrix PCB Finish**
-   - Final board outline and lanyard mounting
    - Clear DRC and schematic-parity warnings
    - Generate 6-layer Gerbers, BOM and placement files
 
