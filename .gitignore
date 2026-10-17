@@ -52,3 +52,12 @@ __pycache__/
 *.pyc
 result
 result-*
+
+# KiCad 10 local history (its own git repo per project)
+.history/
+
+# Generated DRC/ERC reports
+*.rpt
+
+# Playwright MCP session logs
+.playwright-mcp/
