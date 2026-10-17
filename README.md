@@ -18,16 +18,35 @@ This project implements an ultra-dense LED matrix badge designed for human viewi
 | Quantity | ~10 boards |
 | PCB Tool | KiCad |
 
+### Resolution Preview
+
+A quick browser-based mockup of the 40 × 64 LED grid lives in [`mockup/`](mockup/). It cycles through 11 test animations (rainbow, plasma, sparkle, scrolling text, rings, matrix rain, A* snake, thumbs-up, pride flag, a multi-scene cat, and a video-driven Bad Apple) so you can sanity-check what 2560 LEDs at this pitch can actually display before writing firmware.
+
+Run from the repo root:
+
+```bash
+python3 -m http.server -d mockup 8000
+# then open http://localhost:8000/
+```
+
+Cycle with `←` / `→` arrow keys or the on-screen buttons; `space` pauses.
+
+### Development Environment
+
+`nix develop` provides KiCad (with `import pcbnew` working from plain Python), PlatformIO, ffmpeg and the linters. `nix flake show` lists the available commands.
+
 ## Hardware Architecture
 
 ### Two-Board Design
 
-#### 1. Matrix PCB
-- Dense 64×40 LED array
-- Power distribution network
-- Extensive decoupling capacitors
-- Data lane entry points (8 lanes)
+#### 1. Matrix PCB (`cad/led_bage.*`)
+- Dense 64×40 LED array, 8 chains of 320 LEDs (refs `DA1`..`DH320`)
+- 6-layer stackup: F.Cu | GND | VDD_S | VDD_S | GND | B.Cu, two fanout vias per LED
+- Input protection on board: reverse-polarity P-FET (Si7145DP) + SMBJ6.0A TVS
+- Connectors: J1 data (Molex CLIK-Mate 8-pin), J2 power (JST VH 10-pin, back side)
 - Optimized for minimal rework risk
+
+A 100-LED sample board (`cad/led_bage_sample/`) has been fabricated as a reference.
 
 #### 2. Controller/Power PCB
 - ESP32-S3 microcontroller
@@ -157,10 +176,9 @@ Pitch: 1.5625mm (X) × 1.625mm (Y)
 
 **Datasheet requirement:** "Decoupling capacitance between each LED is essential"
 
-**Practical options:**
-- **Aggressive:** 0201 ceramic per LED (2560 caps, likely on backside)
-- **Practical:** Small cluster caps + per-lane bulk capacitors
-- Requires via strategy for backside placement or dense front-side routing
+**Implemented:**
+- 640× 1 µF 0603 on B.Cu, one per 2×2 LED block, rotated 45° between fanout vias
+- 10× 100 µF polymer bulk caps in 5 front/back pairs along the bottom edge of the grid
 
 ### Power Distribution
 
@@ -195,49 +213,37 @@ Pitch: 1.5625mm (X) × 1.625mm (Y)
 
 ## Development Roadmap
 
-### Current Status: Design Phase
+### Current Status: Matrix PCB Layout
 
 #### Completed
 - [x] LED selection and validation
 - [x] Architecture decisions (two-board, 8-lane)
 - [x] Power strategy (PD negotiation + buck)
-- [x] Footprint specifications from datasheet
-- [x] Signal integrity approach
+- [x] LED footprint and 64×40 grid placement
+- [x] 100-LED sample board fabricated
+- [x] Matrix PCB: fanout vias, decoupling, bulk caps, 6-layer power planes
+- [x] Matrix PCB: all 8 data chains routed (0 unconnected items in DRC)
+- [x] Matrix PCB: input protection and J1/J2 connectors
 
 #### Next Steps
 
-1. **KiCad Footprint Finalization**
-   - Create LED footprint with datasheet-verified pad geometry
-   - Validate courtyard settings for dense array placement
-   - Test rectangular array placement for 64×40 grid
+1. **Matrix PCB Finish**
+   - Final board outline and lanyard mounting
+   - Clear DRC and schematic-parity warnings
+   - Generate 6-layer Gerbers, BOM and placement files
 
-2. **Power Tree Design**
+2. **Controller/Power PCB**
    - Define brightness cap (e.g., max 20W from bank)
    - Size buck converter and output capacitors
-   - Calculate per-lane bulk capacitor requirements
-   - Design power distribution network for matrix PCB
+   - Schematic and layout, mating to J1/J2 on the matrix board
 
-3. **Interconnect Definition**
-   - Choose physical connection method (board-to-board, flex, cable)
-   - Design lane-entry routing convention
-   - Finalize connector footprints
-
-4. **Schematic & Layout**
-   - Controller/Power PCB schematic
-   - Matrix PCB schematic (8 lane entry points + power)
-   - Both PCB layouts with careful attention to:
-     - Power distribution impedance
-     - Signal integrity on data lanes
-     - Thermal management (buck converter)
-     - Mechanical alignment between boards
-
-5. **Firmware Architecture**
+3. **Firmware Architecture**
    - ESP32-S3 parallel output driver using DMA
    - Brightness limiting enforcement
    - Animation framework
    - USB power negotiation handling
 
-6. **Prototype & Test**
+4. **Prototype & Test**
    - Order small batch (1-2 sets)
    - Validate assembly process
    - Test refresh rates and power consumption
@@ -283,4 +289,4 @@ This project is licensed under the GNU Affero General Public License v3.0 (AGPL-
 ---
 
 **Project Status:** Active Development
-**Last Updated:** 2026-02-04
+**Last Updated:** 2026-10-17
