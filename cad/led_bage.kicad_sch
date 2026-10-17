@@ -16227,12 +16227,6 @@
 		(uuid "533589e2-9a99-47bb-a4ee-fd7a1b066777")
 	)
 	(junction
-		(at -57.15 10.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5343fe6a-71de-4eab-b1a5-7cd04dd700ad")
-	)
-	(junction
 		(at 435.61 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -21457,12 +21451,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "750bd780-c9d0-4cad-8adb-5b73bf423ce7")
-	)
-	(junction
-		(at -53.34 10.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "75125f1c-4a0f-4960-9b67-12ac022fa312")
 	)
 	(junction
 		(at 4607.56 45.72)
@@ -142208,16 +142196,6 @@
 	)
 	(wire
 		(pts
-			(xy -57.15 10.16) (xy -53.34 10.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb3429e3-da41-4c60-8ca3-7f788311553c")
-	)
-	(wire
-		(pts
 			(xy 2964.18 200.66) (xy 2980.69 200.66)
 		)
 		(stroke
@@ -151076,6 +151054,30 @@
 		)
 		(uuid "d13fad2e-c250-430c-bf21-3388bd7db823")
 	)
+	(global_label "VDD_S"
+		(shape input)
+		(at -53.34 10.16 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e7ac2205-01e6-4d3a-b41e-8c8a3be61f87")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at -53.34 1.3691 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "GND"
 		(shape input)
 		(at 17.78 223.52 90)
@@ -151508,7 +151510,7 @@
 			)
 		)
 	)
-	(global_label "VDD_S"
+	(global_label "VDD"
 		(shape input)
 		(at -36.83 25.4 270)
 		(fields_autoplaced yes)
