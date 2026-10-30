@@ -61,3 +61,7 @@ result-*
 
 # Playwright MCP session logs
 .playwright-mcp/
+
+# Fab outputs (cad/export_fab.py): keep BOM/centroid CSVs, drop the gerber zip
+!cad/fab/*.csv
+cad/fab/*.zip

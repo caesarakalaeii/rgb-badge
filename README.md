@@ -36,10 +36,16 @@ Cycle with `←` / `→` arrow keys or the on-screen buttons; `space` pauses.
 
 `nix develop` provides KiCad (with `import pcbnew` working from plain Python), PlatformIO, ffmpeg and the linters. `nix flake show` lists the available commands.
 
-Board layout changes are scripted in `cad/` and checked end to end (outline, lanyard holes, power-entry wiring, DRC with schematic parity) by:
+Board layout changes are scripted in `cad/` and checked end to end (outline, lanyard holes, power-entry wiring, silkscreen art, fab minimums, fab outputs, JLCPCB assembly files, DRC with schematic parity) by:
 
 ```bash
 python3 cad/test_board.py
+```
+
+Fab outputs (6-layer Gerbers + drill and their zip, BOM, centroid, and the JLCPCB BOM/CPL with LCSC parts and placement corrections, [ADR 0004](docs/adr/0004-jlcpcb-assembly-files.md)) are regenerated into `cad/fab/` by:
+
+```bash
+python3 cad/export_fab.py
 ```
 
 Design decisions are recorded in [`docs/adr/`](docs/adr/).
@@ -57,6 +63,8 @@ Design decisions are recorded in [`docs/adr/`](docs/adr/).
 - Input protection on board: reverse-polarity P-FET (Si7145DP, drain on the input) + SMBJ6.0CA TVS, copper pours for the ~30 A input path ([ADR 0002](docs/adr/0002-reverse-polarity-power-entry.md))
 - Connectors: J1 data (Molex CLIK-Mate 8-pin), J2 power (JST VH 10-pin, back side, cable exits the top edge)
 - Rounded-rectangle outline with two 5 mm plated lanyard holes in a top band beside J2 ([ADR 0001](docs/adr/0001-board-outline-and-lanyard-mounting.md))
+- Silkscreen artwork in the top-right corner (front view) of both sides, traced from `cad/art/front.png` / `back.png` (1-bit exports of the artist's PSD layers, canvas = board outline) by `cad/add_silkscreen_art.py`
+- Design rules sized for PCBWay standard capability: 0.1 mm track/space floor, data nets in a 0.1 mm `Data` netclass ([ADR 0003](docs/adr/0003-fab-design-rules.md))
 - Optimized for minimal rework risk
 
 A 100-LED sample board (`cad/led_bage_sample/`) has been fabricated as a reference.
@@ -238,12 +246,13 @@ Pitch: 1.5625mm (X) × 1.625mm (Y)
 - [x] Matrix PCB: all 8 data chains routed (0 unconnected items in DRC)
 - [x] Matrix PCB: input protection and J1/J2 connectors
 - [x] Matrix PCB: rounded-rectangle outline and lanyard holes
+- [x] Matrix PCB: front and back silkscreen artwork
 
 #### Next Steps
 
 1. **Matrix PCB Finish**
    - Clear DRC and schematic-parity warnings
-   - Generate 6-layer Gerbers, BOM and placement files
+   - Order 5 boards with turnkey assembly from PCBWay or JLCPCB (Gerbers, BOM, centroid in `cad/fab/`)
 
 2. **Controller/Power PCB**
    - Define brightness cap (e.g., max 20W from bank)
