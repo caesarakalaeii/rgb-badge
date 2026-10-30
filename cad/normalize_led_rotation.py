@@ -5,6 +5,7 @@ KiCad pcbnew API. Footprint positions are preserved (pitch/dimensions unchanged)
 only the rotation is normalized so the LED packages face the same direction.
 """
 import sys
+
 import pcbnew
 
 LIB_ID = 'LED_SMD:LED_WS2812B-1010_PLCC4_1.0x1.0mm'

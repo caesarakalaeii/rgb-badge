@@ -12,6 +12,7 @@ Caps outside the LED grid bbox (MCU / connector decoupling) are left alone.
 """
 import math
 import sys
+
 import pcbnew
 
 LED_LIB = 'LED_SMD:LED_WS2812B-1010_PLCC4_1.0x1.0mm'

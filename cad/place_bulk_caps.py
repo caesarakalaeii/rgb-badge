@@ -21,6 +21,7 @@ Caveats:
 """
 import math
 import sys
+
 import pcbnew
 
 LED_LIB = 'LED_SMD:LED_WS2812B-1010_PLCC4_1.0x1.0mm'
@@ -35,17 +36,15 @@ def highest_cap_number(board):
         if ref.startswith('C'):
             try:
                 n = int(ref[1:])
-                if n > high:
-                    high = n
+                high = max(high, n)
             except ValueError:
                 pass
     return high
 
 
 def grid_dims(n):
-    cols = int(round(math.sqrt(n)))
-    if cols < 1:
-        cols = 1
+    cols = round(math.sqrt(n))
+    cols = max(cols, 1)
     rows = (n + cols - 1) // cols
     return cols, rows
 

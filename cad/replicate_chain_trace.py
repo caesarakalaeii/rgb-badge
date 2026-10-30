@@ -12,6 +12,7 @@ Source pattern comes from all PCB_TRACK / PCB_VIA / PCB_ARC segments on
 target pair's DOUT/DIN positions, and reassigned to `Net-(Dn-DOUT)`.
 """
 import sys
+
 import pcbnew
 
 LED_LIB = 'LED_SMD:LED_WS2812B-1010_PLCC4_1.0x1.0mm'
@@ -49,7 +50,6 @@ def replicate(path: str) -> None:
     # build pairs (Dn, Dn+1) from chain topology (DOUT→DIN net sharing)
     pad_by_led = {ref: {pad.GetPinFunction(): pad for pad in fp.Pads() if pad.GetPinFunction() in ('DIN', 'DOUT')}
                   for ref, fp in leds.items()}
-    dout_net_to_ref = {pad_by_led[r]['DOUT'].GetNetname(): r for r in pad_by_led if pad_by_led[r]['DOUT'].GetNetname() and pad_by_led[r]['DOUT'].GetNetname() != ''}
 
     pairs = []  # (src_ref, next_ref, transition_type)
     for ref, pads in pad_by_led.items():

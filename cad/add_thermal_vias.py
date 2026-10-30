@@ -14,6 +14,7 @@ duplicate vias.
 """
 import math
 import sys
+
 import pcbnew
 
 DEFAULT_REFS = ['Q2']

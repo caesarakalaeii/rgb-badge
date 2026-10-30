@@ -12,6 +12,7 @@ on the matching inner layer.
 Via geometry is read from the 'Default' netclass.
 """
 import sys
+
 import pcbnew
 
 LIB_ID = 'LED_SMD:LED_WS2812B-1010_PLCC4_1.0x1.0mm'

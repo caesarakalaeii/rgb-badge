@@ -17,6 +17,7 @@ Complements add_power_vias.py: that handles per-LED fanouts; this keeps
 the planes coherent between F.Cu and B.Cu globally.
 """
 import sys
+
 import pcbnew
 
 DEFAULT_PITCH_MM = 5.0

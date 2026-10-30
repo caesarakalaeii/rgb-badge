@@ -26,6 +26,7 @@ to pin to specific coordinates.
 LEDs missing from the board are reported but do not abort the run.
 """
 import sys
+
 import pcbnew
 
 LED_LIB = 'LED_SMD:LED_WS2812B-1010_PLCC4_1.0x1.0mm'

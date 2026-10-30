@@ -18,6 +18,7 @@ Chain row-transitions stay unrouted -- they have a different shape and
 should be done by hand or with a separate template.
 """
 import sys
+
 import pcbnew
 
 LED_LIB = 'LED_SMD:LED_WS2812B-1010_PLCC4_1.0x1.0mm'
